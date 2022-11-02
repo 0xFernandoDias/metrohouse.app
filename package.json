@@ -28,5 +28,60 @@
 		"typescript": "^4.7.4",
 		"vite": "^3.1.0"
 	},
+	"eslintConfig": {
+		"root": true,
+	"parser": "@typescript-eslint/parser",
+	"extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended", "prettier"],
+	"plugins": ["svelte3", "@typescript-eslint"],
+	"ignorePatterns": ["*.cjs"],
+	"overrides": [{ "files": ["*.svelte"], "processor": "svelte3/svelte3" }],
+	"settings": {
+		"svelte3/typescript": "() => require('typescript')"
+	},
+	"parserOptions": {
+		"sourceType": "module",
+		"ecmaVersion": "2020"
+	},
+	"env": {
+		"browser": true,
+		"es2017": true,
+		"node": true
+	}
+	},
+	"prettier": {
+		"useTabs": true,
+		"singleQuote": true,
+		"trailingComma": "none",
+		"printWidth": 100,
+		"plugins": ["prettier-plugin-svelte"],
+		"pluginSearchDirs": ["."],
+		"overrides": [{ "files": "*.svelte", "options": { "parser": "svelte" } }]
+	},
+	"eslintIgnore": [
+		".DS_Store",
+		"node_modules",
+		"/build",
+		"/.svelte-kit",
+		"/package",
+		".env",
+		".env.*",
+		"!.env.example",
+		"pnpm-lock.yaml",
+		"package-lock.json",
+		"yarn.lock"
+	],
+	"prettierIgnore": [
+		".DS_Store",
+		"node_modules",
+		"/build",
+		"/.svelte-kit",
+		"/package",
+		".env",
+		".env.*",
+		"!.env.example",
+		"pnpm-lock.yaml",
+		"package-lock.json",
+		"yarn.lock"
+	],
 	"type": "module"
 }
