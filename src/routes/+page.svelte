@@ -15,9 +15,3 @@
 <span>
   Span
 </span>
-
-<style>
-	:global(span) {
-		@apply text-pink-100;
-	}
-</style>
