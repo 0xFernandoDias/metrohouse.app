@@ -41,6 +41,7 @@
 		"tslib": "^2.3.1",
 		"typescript": "^4.7.4",
 		"vite": "^3.1.0",
+		"vite-plugin-windicss": "^1.8.8",
 		"vitest": "^0.24.5"
 	},
 	"eslintConfig": {
@@ -125,6 +126,8 @@
 		"package-lock.json",
 		"yarn.lock"
 	],
-	"cypress-cucumber-preprocessor": {"nonGlobalStepDefinitions": true},
+	"cypress-cucumber-preprocessor": {
+		"nonGlobalStepDefinitions": true
+	},
 	"type": "module"
 }
