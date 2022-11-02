@@ -3,9 +3,7 @@ import plugin from 'windicss/plugin'
 
 export default defineConfig({
 	shortcuts: {
-		'metro-pink': {
-			'@apply': 'text-metroPink'
-		},
+		'metro-pink': 'text-metroPink',
 		hstack: 'flex items-center',
 		vstack: 'flex flex-col',
 		icon: 'w-6 h-6 fill-current',
@@ -69,7 +67,7 @@ export default defineConfig({
 					src: 'url("/fonts/segoe-ui/segoeuil.ttf") format("truetype")',
 					fontWeight: 'lighter',
 					fontDisplay: 'swap'
-				},
+				}
 			})
 		}),
 		plugin(({ addBase }) => {
@@ -79,7 +77,7 @@ export default defineConfig({
 					src: 'url("/fonts/segoe-ui/segoeuisl.ttf") format("truetype")',
 					fontWeight: 'light',
 					fontDisplay: 'swap'
-				},
+				}
 			})
 		}),
 		plugin(({ addBase }) => {
@@ -89,7 +87,7 @@ export default defineConfig({
 					src: 'url("/fonts/segoe-ui/segoeui.ttf") format("truetype")',
 					fontWeight: 'normal',
 					fontDisplay: 'swap'
-				},
+				}
 			})
 		}),
 		plugin(({ addBase }) => {
@@ -99,7 +97,7 @@ export default defineConfig({
 					src: 'url("/fonts/segoe-ui/seguisb.ttf") format("truetype")',
 					fontWeight: 'bold',
 					fontDisplay: 'swap'
-				},
+				}
 			})
 		}),
 		plugin(({ addBase }) => {
@@ -109,8 +107,8 @@ export default defineConfig({
 					src: 'url("/fonts/segoe-ui/segoeuib.ttf") format("truetype")',
 					fontWeight: 'bolder',
 					fontDisplay: 'swap'
-				},
+				}
 			})
-		}),
+		})
 	]
 })
