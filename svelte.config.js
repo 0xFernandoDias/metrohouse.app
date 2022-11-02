@@ -9,8 +9,8 @@ const config = {
 
 	//https://kit.svelte.dev/docs/configuration
 	preprocess: [
-		windi({}),
-		preprocess()
+		preprocess(),
+		windi({})
 	],
 	kit: {
 		adapter: adapter()
