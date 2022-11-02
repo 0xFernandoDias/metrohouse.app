@@ -7,9 +7,9 @@
 </svelte:head>
 
 <!-- Wrong way -->
-<h1 class="text-metroPink">Welcome to SvelteKit</h1>
+<h1 class="text-metroPink font-segoe font-bold">Welcome to SvelteKit</h1>
 <!-- Right way -->
-<p class="metro-pink">
+<p class="metro-pink font-segoe font-semibold">
 	Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation
 </p>
 <!-- Example -->
@@ -25,11 +25,11 @@
 	href="/"
 	appearance="primary"
 	shape="rounded"
-	iconProps={}
-	keytipProps={}
-	menuProps={}
-	menuIconProps={}
-	toggle={}
+	iconProps={{}}
+	keytipProps={{}}
+	menuProps={{}}
+	menuIconProps={{}}
+	toggle={{}}
 	onClick={() => {}}
 >
 	Rest
