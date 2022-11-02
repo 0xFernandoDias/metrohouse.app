@@ -7,7 +7,7 @@ export default defineConfig({
 		},
 		extend: {
 			colors: {
-				red: '#ff0000'
+				'pink-100': '#855487'
 			}
 		}
 	},

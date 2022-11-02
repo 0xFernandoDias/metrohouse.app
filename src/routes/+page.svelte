@@ -2,12 +2,22 @@
 </script>
 
 <svelte:head>
-  <title>Feed</title>
+	<title>Feed</title>
 </svelte:head>
 
 <!-- Wrong way -->
 <h1 class="text-metroPink">Welcome to SvelteKit</h1>
 <!-- Right way -->
-<p class="metro-pink">Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<p class="metro-pink">
+	Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation
+</p>
+<!-- Example -->
+<span>
+  Span
+</span>
 
-<style></style>
+<style>
+	:global(span) {
+		@apply text-pink-100;
+	}
+</style>
