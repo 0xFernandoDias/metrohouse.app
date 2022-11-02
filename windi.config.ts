@@ -1,5 +1,19 @@
-import { defineConfig } from 'windicss/helpers';
+import { defineConfig } from 'windicss/helpers'
 
 export default defineConfig({
-	shortcuts: {}
-});
+	theme: {
+		colors: {
+			metroPink: '#855487'
+		},
+		extend: {
+			colors: {
+				red: '#ff0000'
+			}
+		}
+	},
+	shortcuts: {
+		'metro-pink': {
+			'@apply': 'text-metroPink'
+		}
+	}
+})
