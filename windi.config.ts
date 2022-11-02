@@ -1,6 +1,11 @@
 import { defineConfig } from 'windicss/helpers'
 
 export default defineConfig({
+	shortcuts: {
+		'metro-pink': {
+			'@apply': 'text-metroPink'
+		}
+	},
 	theme: {
 		colors: {
 			metroPink: '#855487'
@@ -9,11 +14,6 @@ export default defineConfig({
 			colors: {
 				'pink-100': '#855487'
 			}
-		}
-	},
-	shortcuts: {
-		'metro-pink': {
-			'@apply': 'text-metroPink'
 		}
 	}
 })
