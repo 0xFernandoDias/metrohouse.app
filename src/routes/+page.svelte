@@ -6,7 +6,8 @@
 	<title>Feed</title>
 </svelte:head>
 
-<div class="grid grid-cols-12">
+<!-- <div class="grid grid-cols-12"> -->
+<div class="flex">
 	<Button />
 </div>
 

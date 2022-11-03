@@ -26,8 +26,6 @@ export default defineConfig({
 		semiboldPageTitleText: 'font-segoe text-sm font-semibold',
 		semiboldGreetingTitleText: 'font-segoe text-sm font-semibold',
 		semiboldHeroTitleText: 'font-segoe text-sm font-semibold',
-
-		btn: 'flex py-1.5 px-5 justify-center items-center rounded-sm bg-themePrimary shadow-sm cursor-pointer semiboldMetadataText text-center text-white normal-case'
 	},
 	theme: {
 		screens: {
