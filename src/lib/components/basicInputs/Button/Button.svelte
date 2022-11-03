@@ -46,7 +46,7 @@ onHover pressed focused -->
 				transform="translate(1 1)"
 			/></svg
 		>
-		<span class="flex semiboldMetadataText text-center text-white disabled:text-grey90">Rest</span>
+		<span class="flex semiboldMetadataText text-center text-white disabled:text-grey90">Click me</span>
         <!-- <svg width="12" height="16" viewBox="0 2 14 1"
 			><path
 				fill="none"
