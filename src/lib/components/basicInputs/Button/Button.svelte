@@ -27,8 +27,8 @@ https://react.fluentui.dev/?path=/docs/components-button-button--default -->
 ...restProps, styleProps
 onHover pressed focused -->
 
-<button class="flex py-1.5 px-5 justify-center items-center rounded-sm bg-themePrimary shadow-sm">
-    <span class="text-sm text-center text-neutral-50 font-semibold capitalize">Save more</span>
+<button type="button" class="btn">
+    Click me!
 </button>
 
 <style></style>

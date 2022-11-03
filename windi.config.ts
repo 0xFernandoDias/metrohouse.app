@@ -8,13 +8,40 @@ export default defineConfig({
 		vstack: 'flex flex-col',
 		icon: 'w-6 h-6 fill-current',
 		'app-border': 'border-gray-200 dark:border-dark-300',
-		'app-modal': 'fixed top-0 w-full h-full z-50 bg-white bg-opacity-70 blur-5 shadow-lg'
+		'app-modal': 'fixed top-0 w-full h-full z-50 bg-white bg-opacity-70 blur-5 shadow-lg',
+
+		regularMetadataText: 'font-segoe text-sm font-normal',
+		regularoBodyText: 'font-segoe text-sm font-normal',
+		regularSubjectText: 'font-segoe text-sm font-normal',
+		regularHeaderText: 'font-segoe text-sm font-normal',
+		regularPaneHeaderText: 'font-segoe text-sm font-normal',
+		regularPageTitleText: 'font-segoe text-sm font-normal',
+		regularGreetingTitleText: 'font-segoe text-sm font-normal',
+		regularHeroTitleText: 'font-segoe text-sm font-normal',
+		semiboldMetadataText: 'font-segoe text-sm font-semibold',
+		semiboldoBodyText: 'font-segoe text-sm font-semibold',
+		semiboldSubjectText: 'font-segoe text-sm font-semibold',
+		semiboldHeaderText: 'font-segoe text-sm font-semibold',
+		semiboldPaneHeaderText: 'font-segoe text-sm font-semibold',
+		semiboldPageTitleText: 'font-segoe text-sm font-semibold',
+		semiboldGreetingTitleText: 'font-segoe text-sm font-semibold',
+		semiboldHeroTitleText: 'font-segoe text-sm font-semibold',
+
+		btn: 'flex py-1.5 px-5 justify-center items-center rounded-sm bg-themePrimary shadow-sm cursor-pointer semiboldMetadataText text-center text-white normal-case'
 	},
 	theme: {
+		screens: {
+			sm: '320px',
+			md: '480px',
+			lg: '640px',
+			xl: '1024px',
+			'2xl': '1366px'
+		},
 		extend: {
+			screens: {
+				'3xl': '1920px'
+			},
 			colors: {
-				'pink-100': '#855487',
-				metroPink: '#855487',
 				typePrimary: '#323130',
 				typeSecondary: '#605E5C',
 				typeDisabled: '#A19F9D',
@@ -38,7 +65,19 @@ export default defineConfig({
 				statusSevereWarningTypeOrIcon: '#D83B01',
 				statusWarningTypeOrIcon: '#797775',
 				overlayLight: 'rgba(255, 255, 255, 0.4)',
-				overlayDark: 'rgba(0, 0, 0, 0.4)'
+				overlayDark: 'rgba(0, 0, 0, 0.4)',
+				white: '#FFFFFF',
+				grey10: '#FAF9F8',
+				grey20: '#F3F2F1',
+				grey30: '#EDEBE9',
+				grey40: '#E1DFDD',
+				grey50: '#D2D0CE',
+				grey60: '#C8C6C4',
+				grey90: '#A19F9D',
+				grey130: '#605E5C',
+				grey150: '#3B3A39',
+				grey160: '#323130',
+				grey190: '#201F1E'
 			},
 			fontFamily: {
 				segoe: ['Segoe UI', 'sans-serif']
