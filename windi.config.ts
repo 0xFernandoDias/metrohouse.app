@@ -2,107 +2,7 @@ import { defineConfig } from 'windicss/helpers'
 import plugin from 'windicss/plugin'
 
 export default defineConfig({
-	shortcuts: {
-		'metro-pink': 'text-metroPink',
-		hstack: 'flex items-center',
-		vstack: 'flex flex-col',
-		icon: 'w-6 h-6 fill-current',
-		'app-border': 'border-gray-200 dark:border-dark-300',
-		'app-modal': 'fixed top-0 w-full h-full z-50 bg-white bg-opacity-70 blur-5 shadow-lg',
-
-		regularMetadataText: 'font-segoe text-sm font-normal',
-		regularoBodyText: 'font-segoe text-sm font-normal',
-		regularSubjectText: 'font-segoe text-sm font-normal',
-		regularHeaderText: 'font-segoe text-sm font-normal',
-		regularPaneHeaderText: 'font-segoe text-sm font-normal',
-		regularPageTitleText: 'font-segoe text-sm font-normal',
-		regularGreetingTitleText: 'font-segoe text-sm font-normal',
-		regularHeroTitleText: 'font-segoe text-sm font-normal',
-		semiboldMetadataText: 'font-segoe text-sm font-semibold',
-		semiboldoBodyText: 'font-segoe text-sm font-semibold',
-		semiboldSubjectText: 'font-segoe text-sm font-semibold',
-		semiboldHeaderText: 'font-segoe text-sm font-semibold',
-		semiboldPaneHeaderText: 'font-segoe text-sm font-semibold',
-		semiboldPageTitleText: 'font-segoe text-sm font-semibold',
-		semiboldGreetingTitleText: 'font-segoe text-sm font-semibold',
-		semiboldHeroTitleText: 'font-segoe text-sm font-semibold',
-	},
-	theme: {
-		screens: {
-			sm: '320px',
-			md: '480px',
-			lg: '640px',
-			xl: '1024px',
-			'2xl': '1366px'
-		},
-		extend: {
-			screens: {
-				'3xl': '1920px'
-			},
-			colors: {
-				typePrimary: '#323130',
-				typeSecondary: '#605E5C',
-				typeDisabled: '#A19F9D',
-				bodyDivider: '#EDEBE9',
-				inputBorder: '#8A8886',
-				inputHoverBorder: '#323130',
-				themePrimary: '#0078D4',
-				themeLighterAlt: '#EFF6FC',
-				themeLighter: '#DEECF9',
-				themeLight: '#C7E0F4',
-				themeTertiary: '#2B88D8',
-				themeDarkAlt: '#106EBE',
-				themeDark: '#005A9E',
-				themeDarker: '#004578',
-				errorBackgroundFill: '#FDE7E9',
-				successBackgroundFill: '#DFF6DD',
-				severeWarningBackgroundFill: '#FED9CC',
-				warningBackgroundFill: '#FFF4CE',
-				statusErrorTypeOrIcon: '#A80000',
-				statusSuccessTypeOrIcon: '#107C10',
-				statusSevereWarningTypeOrIcon: '#D83B01',
-				statusWarningTypeOrIcon: '#797775',
-				overlayLight: 'rgba(255, 255, 255, 0.4)',
-				overlayDark: 'rgba(0, 0, 0, 0.4)',
-				white: '#FFFFFF',
-				grey10: '#FAF9F8',
-				grey20: '#F3F2F1',
-				grey30: '#EDEBE9',
-				grey40: '#E1DFDD',
-				grey50: '#D2D0CE',
-				grey60: '#C8C6C4',
-				grey90: '#A19F9D',
-				grey130: '#605E5C',
-				grey150: '#3B3A39',
-				grey160: '#323130',
-				grey190: '#201F1E'
-			},
-			fontFamily: {
-				segoe: ['Segoe UI', 'sans-serif']
-			}
-		}
-	},
 	plugins: [
-		plugin(({ addBase }) => {
-			addBase({
-				'@font-face': {
-					fontFamily: 'Segoe UI',
-					src: 'url("/fonts/segoe-ui/segoeuil.ttf") format("truetype")',
-					fontWeight: 'lighter',
-					fontDisplay: 'swap'
-				}
-			})
-		}),
-		plugin(({ addBase }) => {
-			addBase({
-				'@font-face': {
-					fontFamily: 'Segoe UI',
-					src: 'url("/fonts/segoe-ui/segoeuisl.ttf") format("truetype")',
-					fontWeight: 'light',
-					fontDisplay: 'swap'
-				}
-			})
-		}),
 		plugin(({ addBase }) => {
 			addBase({
 				'@font-face': {
@@ -116,22 +16,243 @@ export default defineConfig({
 		plugin(({ addBase }) => {
 			addBase({
 				'@font-face': {
-					fontFamily: 'Segoe UI',
+					fontFamily: 'Segoe UI Semibold',
 					src: 'url("/fonts/segoe-ui/seguisb.ttf") format("truetype")',
-					fontWeight: 'bold',
+					fontWeight: 'semibold',
 					fontDisplay: 'swap'
 				}
 			})
 		}),
 		plugin(({ addBase }) => {
 			addBase({
-				'@font-face': {
-					fontFamily: 'Segoe UI',
-					src: 'url("/fonts/segoe-ui/segoeuib.ttf") format("truetype")',
-					fontWeight: 'bolder',
-					fontDisplay: 'swap'
-				}
+				'html *': { fontFamily: 'Segoe UI' }
+			})
+		}),
+		plugin(({ addBase }) => {
+			addBase({
+				'html *': { fontFamily: 'Segoe UI Semibold'}
 			})
 		})
-	]
+	],
+	theme: {
+		fontFamily: {
+			segoe: 'Segoe UI',
+			segoeSemibold: 'Segoe UI Semibold'
+		},
+		fontSize: {
+			xxsRegular: [
+				'0.625rem',
+				{
+					fontWeight: 'normal',
+					lineHeight: '0.75rem',
+					fontFamily: 'Segoe UI'
+				}
+			],
+			xsRegular: [
+				'0.75rem',
+				{
+					fontWeight: 'normal',
+					lineHeight: '1rem',
+					fontFamily: 'Segoe UI'
+				}
+			],
+			smRegular: [
+				'0.875rem',
+				{
+					fontWeight: 'normal',
+					lineHeight: '1.25rem',
+					fontFamily: 'Segoe UI'
+				}
+			],
+			baseRegular: [
+				'1rem',
+				{
+					fontWeight: 'normal',
+					lineHeight: '1.375rem',
+					fontFamily: 'Segoe UI'
+				}
+			],
+			lgRegular: [
+				'1.125rem',
+				{
+					fontWeight: 'normal',
+					lineHeight: '1.5rem',
+					fontFamily: 'Segoe UI'
+				}
+			],
+			xlRegular: [
+				'1.25rem',
+				{
+					fontWeight: 'normal',
+					lineHeight: '1.75rem',
+					fontFamily: 'Segoe UI'
+				}
+			],
+			'2xlRegular': [
+				'1.75rem',
+				{
+					fontWeight: 'normal',
+					lineHeight: '2.25rem',
+					fontFamily: 'Segoe UI'
+				}
+			],
+			'3xlRegular': [
+				'2rem',
+				{
+					fontWeight: 'normal',
+					lineHeight: '2.5rem',
+					fontFamily: 'Segoe UI'
+				}
+			],
+			'4xlRegular': [
+				'2.625',
+				{
+					fontWeight: 'normal',
+					lineHeight: '3.25rem',
+					fontFamily: 'Segoe UI'
+				}
+			],
+			'5xlRegular': [
+				'4.25rem',
+				{
+					fontWeight: 'normal',
+					lineHeight: '4.75rem',
+					fontFamily: 'Segoe UI'
+				}
+			],
+			xxsSemibold: [
+				'0.625rem',
+				{
+					fontWeight: 'semibold',
+					lineHeight: '0.75rem',
+					fontFamily: 'Segoe UI Semibold'
+				}
+			],
+			xsSemibold: [
+				'0.75rem',
+				{
+					fontWeight: 'semibold',
+					lineHeight: '1rem',
+					fontFamily: 'Segoe UI Semibold'
+				}
+			],
+			smSemibold: [
+				'0.875rem',
+				{
+					fontWeight: 'semibold',
+					lineHeight: '1.25rem',
+					fontFamily: 'Segoe UI Semibold'
+				}
+			],
+			baseSemibold: [
+				'1rem',
+				{
+					fontWeight: 'semibold',
+					lineHeight: '1.375rem',
+					fontFamily: 'Segoe UI Semibold'
+				}
+			],
+			lgSemibold: [
+				'1.125rem',
+				{
+					fontWeight: 'semibold',
+					lineHeight: '1.5rem',
+					fontFamily: 'Segoe UI Semibold'
+				}
+			],
+			xlSemibold: [
+				'1.25rem',
+				{
+					fontWeight: 'semibold',
+					lineHeight: '1.75rem',
+					fontFamily: 'Segoe UI Semibold'
+				}
+			],
+			'2xlSemibold': [
+				'1.75rem',
+				{
+					fontWeight: 'semibold',
+					lineHeight: '2.25rem',
+					fontFamily: 'Segoe UI Semibold'
+				}
+			],
+			'3xlSemibold': [
+				'2rem',
+				{
+					fontWeight: 'semibold',
+					lineHeight: '2.5rem',
+					fontFamily: 'Segoe UI Semibold'
+				}
+			],
+			'4xlSemibold': [
+				'2.625',
+				{
+					fontWeight: 'semibold',
+					lineHeight: '3.25rem',
+					fontFamily: 'Segoe UI Semibold'
+				}
+			],
+			'5xlSemibold': [
+				'4.25rem',
+				{
+					fontWeight: 'semibold',
+					lineHeight: '4.75rem',
+					fontFamily: 'Segoe UI Semibold'
+				}
+			]
+		},
+		colors: {
+			typePrimary: '#323130',
+			typeSecondary: '#605E5C',
+			typeDisabled: '#A19F9D',
+			bodyDivider: '#EDEBE9',
+			inputBorder: '#8A8886',
+			inputHoverBorder: '#323130',
+			themePrimary: '#0078D4',
+			themeLighterAlt: '#EFF6FC',
+			themeLighter: '#DEECF9',
+			themeLight: '#C7E0F4',
+			themeTertiary: '#2B88D8',
+			themeDarkAlt: '#106EBE',
+			themeDark: '#005A9E',
+			themeDarker: '#004578',
+			errorBackgroundFill: '#FDE7E9',
+			successBackgroundFill: '#DFF6DD',
+			severeWarningBackgroundFill: '#FED9CC',
+			warningBackgroundFill: '#FFF4CE',
+			statusErrorTypeOrIcon: '#A80000',
+			statusSuccessTypeOrIcon: '#107C10',
+			statusSevereWarningTypeOrIcon: '#D83B01',
+			statusWarningTypeOrIcon: '#797775',
+			overlayLight: 'rgba(255, 255, 255, 0.4)',
+			overlayDark: 'rgba(0, 0, 0, 0.4)',
+			white: '#FFFFFF',
+			grey10: '#FAF9F8',
+			grey20: '#F3F2F1',
+			grey30: '#EDEBE9',
+			grey40: '#E1DFDD',
+			grey50: '#D2D0CE',
+			grey60: '#C8C6C4',
+			grey90: '#A19F9D',
+			grey130: '#605E5C',
+			grey150: '#3B3A39',
+			grey160: '#323130',
+			grey190: '#201F1E'
+		},
+		extend: {
+			screens: {
+				sm: '320px',
+				md: '480px',
+				lg: '640px',
+				xl: '1024px',
+				'2xl': '1366px',
+				'3xl': '1920px'
+			}
+		}
+	},
+	shortcuts: {
+		hstack: 'flex items-center',
+		vstack: 'flex flex-col',
+		icon: 'w-6 h-6 fill-current'
+	}
 })
