@@ -30,7 +30,7 @@ disabled onHover active focused -->
 <button
 	class="flex justify-center items-center rounded-sm bg-themePrimary disabled:bg-grey20 shadow-sm cursor-pointer"
 >
-	<div
+	<button
 		type="button"
 		class="flex py-1.5 px-5 gap-2 justify-center items-center rounded-l-sm hover:bg-themeDarkAlt active:bg-themeDark"
 	>
@@ -61,8 +61,8 @@ disabled onHover active focused -->
 				d="m1 1 6 6 6-6"
 			/></svg
 		> -->
-		</div>
-	<div
+		</button>
+	<button
 		type="button"
 		class="flex py-1.5 pr-2 gap-2 justify-center items-center rounded-r-sm hover:bg-themeDarkAlt active:bg-themeDark"
 	>
@@ -78,5 +78,5 @@ disabled onHover active focused -->
 				d="m1 1 6 6 6-6"
 			/></svg
 		>
-	</div>
+	</button>
 </button>
