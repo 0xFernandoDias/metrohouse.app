@@ -49,7 +49,7 @@ disabled onHover active focused -->
 				transform="translate(1 1)"
 			/></svg
 		>
-		<span class="text-smSemibold text-white disabled:text-grey90">Click me</span>
+		<span class="smSemibold text-white disabled:text-grey90">Click me</span>
 		<!-- <svg width="12" height="16" viewBox="0 2 14 1"
 			><path
 				fill="none"
@@ -66,6 +66,6 @@ disabled onHover active focused -->
 		type="button"
 		class="flex py-1.5 pr-2 gap-2 justify-center items-center rounded-r-sm hover:bg-themeDarkAlt active:bg-themeDark"
 	>
-		<span class="flex text-smRegular text-white disabled:text-grey90">|</span>
+		<span class="smRegular text-white disabled:text-grey90">|</span>
 	</div>
 </div>
