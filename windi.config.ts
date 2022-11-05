@@ -23,16 +23,6 @@ export default defineConfig({
 				}
 			})
 		}),
-		plugin(({ addBase }) => {
-			addBase({
-				'html *': { fontFamily: 'Segoe UI' }
-			})
-		}),
-		plugin(({ addBase }) => {
-			addBase({
-				'html *': { fontFamily: 'Segoe UI Semibold' }
-			})
-		})
 	],
 	theme: {
 		screens: {
@@ -91,26 +81,26 @@ export default defineConfig({
 		}
 	},
 	shortcuts: {
-		xxsRegular: 'text-[0.625rem] leading-[0.75rem] font-segoeUi',
-		xsRegular: 'text-[0.75rem] leading-[1rem] font-segoeUi',
-		smRegular: 'text-[0.875rem] leading-[1.25rem] font-segoeUi',
-		baseRegular: 'text-[1rem] leading-[1.375rem] font-segoeUi',
-		lgRegular: 'text-[1.125rem] leading-[1.5rem] font-segoeUi',
-		xlRegular: 'text-[1.25rem] leading-[1.75rem] font-segoeUi',
-		'2xlRegular': 'text-[1.75rem] leading-[2.25rem] font-segoeUi',
-		'3xlRegular': 'text-[2rem] leading-[2.5rem] font-segoeUi',
-		'4xlRegular': 'text-[2.625rem] leading-[3.25rem] font-segoeUi',
-		'5xlRegular': 'text-[4.25rem] leading-[4.75rem] font-segoeUi',
-		xxsSemibold: 'text-[0.625rem] leading-[0.75rem] font-segoeUiSemibold',
-		xsSemibold: 'text-[0.75rem] leading-[1rem] font-segoeUiSemibold',
-		smSemibold: 'text-[0.875rem] leading-[1.25rem] font-segoeUiSemibold',
-		baseSemibold: 'text-[1rem] leading-[1.375rem] font-segoeUiSemibold',
-		lgSemibold: 'text-[1.125rem] leading-[1.5rem] font-segoeUiSemibold',
-		xlSemibold: 'text-[1.25rem] leading-[1.75rem] font-segoeUiSemibold',
-		'2xlSemibold': 'text-[1.75rem] leading-[2.25rem] font-segoeUiSemibold',
-		'3xlSemibold': 'text-[2rem] leading-[2.5rem] font-segoeUiSemibold',
-		'4xlSemibold': 'text-[2.625] leading-[3.25rem] font-segoeUiSemibold',
-		'5xlSemibold': 'text-[4.25rem] leading-[4.75rem] font-segoeUiSemibold',
+		xxsRegular: 'font-segoeUi text-[0.625rem] font-normal leading-[0.75rem]',
+		xsRegular: 'font-segoeUi text-[0.75rem] font-normal leading-[1rem]',
+		smRegular: 'font-segoeUi text-[0.875rem] font-normal leading-[1.25rem]',
+		baseRegular: 'font-segoeUi text-[1rem] font-normal leading-[1.375rem]',
+		lgRegular: 'font-segoeUi text-[1.125rem] font-normal leading-[1.5rem]',
+		xlRegular: 'font-segoeUi text-[1.25rem] font-normal leading-[1.75rem]',
+		'2xlRegular': 'font-segoeUi text-[1.75rem] font-normal leading-[2.25rem]',
+		'3xlRegular': 'font-segoeUi text-[2rem] font-normal leading-[2.5rem]',
+		'4xlRegular': 'font-segoeUi text-[2.625rem] font-normal leading-[3.25rem]',
+		'5xlRegular': 'font-segoeUi text-[4.25rem] font-normal leading-[4.75rem]',
+		xxsSemibold: 'font-segoeUiSemibold text-[0.625rem] font-semibold leading-[0.75rem]',
+		xsSemibold: 'font-segoeUiSemibold text-[0.75rem] font-semibold leading-[1rem]',
+		smSemibold: 'font-segoeUiSemibold text-[0.875rem] font-semibold leading-[1.25rem]',
+		baseSemibold: 'font-segoeUiSemibold text-[1rem] font-semibold leading-[1.375rem]',
+		lgSemibold: 'font-segoeUiSemibold text-[1.125rem] font-semibold leading-[1.5rem]',
+		xlSemibold: 'font-segoeUiSemibold text-[1.25rem] font-semibold leading-[1.75rem]',
+		'2xlSemibold': 'font-segoeUiSemibold text-[1.75rem] font-semibold leading-[2.25rem]',
+		'3xlSemibold': 'font-segoeUiSemibold text-[2rem] font-semibold leading-[2.5rem]',
+		'4xlSemibold': 'font-segoeUiSemibold text-[2.625] font-semibold leading-[3.25rem]',
+		'5xlSemibold': 'font-segoeUiSemibold text-[4.25rem] font-semibold leading-[4.75rem]',
 		hstack: 'flex items-center',
 		vstack: 'flex flex-col',
 	}

@@ -27,7 +27,7 @@ disabled onHover active focused -->
 
 <!-- emit event -->
 
-<div
+<button
 	class="flex justify-center items-center rounded-sm bg-themePrimary disabled:bg-grey20 shadow-sm cursor-pointer"
 >
 	<div
@@ -67,5 +67,16 @@ disabled onHover active focused -->
 		class="flex py-1.5 pr-2 gap-2 justify-center items-center rounded-r-sm hover:bg-themeDarkAlt active:bg-themeDark"
 	>
 		<span class="smRegular text-white disabled:text-grey90">|</span>
+		<svg width="12" height="16" viewBox="0 2 14 1"
+			><path
+				fill="none"
+				stroke="#fff"
+                class="disabled:stroke-grey90"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				stroke-width="2"
+				d="m1 1 6 6 6-6"
+			/></svg
+		>
 	</div>
-</div>
+</button>
