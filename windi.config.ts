@@ -76,7 +76,8 @@ export default defineConfig({
 				grey130: '#605E5C',
 				grey150: '#3B3A39',
 				grey160: '#323130',
-				grey190: '#201F1E'
+				grey190: '#201F1E',
+				black: '#000000'
 			},
 		}
 	},
