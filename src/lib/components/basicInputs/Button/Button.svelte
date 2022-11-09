@@ -1,34 +1,9 @@
 <script lang="ts">
-	export let appearance: 'primary' | 'secondary' | 'subtle' | 'transparent' = 'primary'
-
-	// export let checked: boolean = false
-	// export let className: string ''
-	// export let colors: object = {}
-	// export let data: any
-	// export let dropdownIcon: boolean = false
-	// export let dropdownSplit: boolean = false
-	// export let href: string = ''
-	// export let iconPosition: 'before' | 'after' = 'before'
-	// export let iconProps: any
-	// export let keytipProps: any
-	// export let menuIconProps: any
-	// export let menuProps: any
-	// export let onClick: () => void = () => {}
-	// export let primaryIcon: boolean = false
-	// export let shape: 'circular' | 'rounded' | 'square' = 'rounded'
-	// export let size: 'small' | 'medium' | 'large' = 'medium'
+	export let appearance: 'primary' | 'secondary' | 'textButton' | 'transparent' = 'primary'
 </script>
-
-<!-- 
-...restProps, styleProps
- -->
-
-<!-- emit event -->
 
 <div
 	class="flex min-w-min justify-center items-center rounded-sm {appearance}"
-	class:border={appearance === 'secondary'}
-	class:border-inputBorder={appearance === 'secondary'}
 >
 	<button type="button" class="px-5 rounded-l-sm">
 		<svg width="16" height="16" viewBox="0 0 22 22">
@@ -71,8 +46,6 @@
 
 <style>
 	.primary {
-		@apply shadow-sm;
-
 		button {
 			@apply bg-themePrimary text-white;
 			&:hover {
@@ -81,14 +54,6 @@
 			&:active {
 				@apply bg-themeDark;
 			}
-			&:disabled {
-				@apply bg-grey20 text-grey90;
-
-				svg circle,
-				svg path {
-					@apply stroke-grey90;
-				}
-			}
 			svg circle,
 			svg path {
 				@apply stroke-white;
@@ -96,70 +61,27 @@
 		}
 	}
 
-	.secondary {
-		@apply shadow-sm;
-
+	div.secondary {
+		@apply border border-inputBorder;
 		&:disabled {
 			@apply border-none;
 		}
-
 		button {
 			@apply bg-white;
-			&:hover {
-				@apply bg-grey20;
-			}
-			&:active {
-				@apply bg-grey30;
-			}
-			&:disabled {
-				@apply bg-grey20 text-grey90;
-				span {
-					@apply text-grey90;
-				}
-				svg circle,
-				svg path {
-					@apply stroke-grey90;
-				}
-			}
-			span {
-				@apply text-grey190;
-			}
 			svg circle {
 				@apply stroke-grey190;
-			}
-			svg path {
-				@apply stroke-grey130;
 			}
 		}
 	}
 
-	.subtle {
-		@apply shadow-sm;
+	.secondary,
+	.textButton {
 		button {
 			&:hover {
 				@apply bg-grey20;
 			}
 			&:active {
 				@apply bg-grey30;
-			}
-			&:disabled {
-				@apply bg-grey20 text-grey90;
-				span {
-					@apply text-grey90;
-				}
-				svg circle,
-				svg path {
-					@apply stroke-grey90;
-				}
-			}
-			span {
-				@apply text-grey190;
-			}
-			svg circle {
-				@apply stroke-themePrimary;
-			}
-			svg path {
-				@apply stroke-grey130;
 			}
 		}
 	}
@@ -170,7 +92,6 @@
 				span {
 					@apply text-themePrimary;
 				}
-				svg circle,
 				svg path {
 					@apply stroke-themePrimary;
 				}
@@ -184,6 +105,17 @@
 					@apply stroke-black;
 				}
 			}
+			svg circle {
+				@apply stroke-themeDark;
+			}
+		}
+	}
+
+	.primary,
+	.secondary,
+	.textButton,
+	.transparent {
+		button {
 			&:disabled {
 				span {
 					@apply text-grey90;
@@ -193,14 +125,38 @@
 					@apply stroke-grey90;
 				}
 			}
+		}
+	}
+
+	.primary,
+	.secondary,
+	.textButton {
+		@apply shadow-sm;
+		button {
+			&:disabled {
+				@apply bg-grey20;
+			}
+		}
+	}
+
+	.secondary,
+	.textButton,
+	.transparent {
+		button {
 			span {
 				@apply text-grey190;
 			}
-			svg circle {
-				@apply stroke-themeDark;
-			}
 			svg path {
 				@apply stroke-grey130;
+			}
+		}
+	}
+
+	.textButton,
+	.transparent {
+		button {
+			svg circle {
+				@apply stroke-themePrimary;
 			}
 		}
 	}

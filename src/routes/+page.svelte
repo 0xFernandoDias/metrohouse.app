@@ -10,7 +10,7 @@
 <div class="flex">
 	<Button />
 	<Button appearance="secondary" />
-	<Button appearance="subtle" />
+	<Button appearance="textButton" />
 	<Button appearance="transparent" />
 </div>
 
