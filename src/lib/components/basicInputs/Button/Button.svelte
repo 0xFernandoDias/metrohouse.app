@@ -1,5 +1,22 @@
 <script lang="ts">
 	export let appearance: 'primary' | 'secondary' | 'subtle' | 'transparent' = 'primary'
+
+	// export let checked: boolean = false
+	// export let className: string ''
+	// export let colors: object = {}
+	// export let data: any
+	// export let dropdownIcon: boolean = false
+	// export let dropdownSplit: boolean = false
+	// export let href: string = ''
+	// export let iconPosition: 'before' | 'after' = 'before'
+	// export let iconProps: any
+	// export let keytipProps: any
+	// export let menuIconProps: any
+	// export let menuProps: any
+	// export let onClick: () => void = () => {}
+	// export let primaryIcon: boolean = false
+	// export let shape: 'circular' | 'rounded' | 'square' = 'rounded'
+	// export let size: 'small' | 'medium' | 'large' = 'medium'
 </script>
 
 <!-- 
@@ -52,9 +69,7 @@ disabled onHover active focused -->
 		<span class="smRegular {appearance !== 'primary' ? 'text-grey60' : 'text-white'}">|</span>
 		<svg width="12" height="16" viewBox="0 2 14 1">
 			<path
-				class={appearance !== 'primary'
-					? 'stroke-grey130'
-					: 'stroke-white'}
+				class={appearance !== 'primary' ? 'stroke-grey130' : 'stroke-white'}
 				fill="none"
 				stroke-linecap="round"
 				stroke-linejoin="round"
@@ -67,7 +82,16 @@ disabled onHover active focused -->
 
 <style>
 	button {
-		@apply flex py-1.5 gap-2 justify-center items-center disabled:bg-grey20 disabled:text-grey90;
+		@apply flex py-1.5 gap-2 justify-center items-center;
+	}
+
+	button:disabled {
+		@apply bg-grey20 hover:bg-grey20 text-grey90 hover:text-grey90;
+	}
+
+	button:disabled svg circle,
+	button:disabled svg path {
+		@apply stroke-grey90;
 	}
 
 	.primary {
@@ -82,6 +106,10 @@ disabled onHover active focused -->
 		@apply text-themePrimary;
 	}
 
+	.transparent:disabled:hover .label {
+		@apply text-grey90;
+	}
+
 	.transparent:active .label {
 		@apply text-black;
 	}
@@ -89,6 +117,10 @@ disabled onHover active focused -->
 	.transparent:hover svg circle,
 	.transparent:hover svg path {
 		@apply stroke-themePrimary;
+	}
+
+	.transparent:disabled:hover svg circle, .transparent:disabled:hover svg path {
+		@apply stroke-grey90;
 	}
 
 	.transparent:active svg circle,
