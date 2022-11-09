@@ -2,10 +2,8 @@
 	export let appearance: 'primary' | 'secondary' | 'textButton' | 'transparent' = 'primary'
 </script>
 
-<div
-	class="flex min-w-min justify-center items-center rounded-sm {appearance}"
->
-	<button type="button" class="px-5 rounded-l-sm">
+<div class="flex min-w-min justify-center items-center rounded-sm {appearance}">
+	<button type="button" class={appearance}>
 		<svg width="16" height="16" viewBox="0 0 22 22">
 			<circle
 				cx="10"
@@ -30,7 +28,7 @@
 			/>
 		</svg> -->
 	</button>
-	<button type="button" class="pr-2 rounded-r-sm {appearance}">
+	<button type="button" class={appearance}>
 		<div class="h-4 w-[1px] bg-grey60" />
 		<svg width="16" height="16" viewBox="0 2 14 1">
 			<path
@@ -45,75 +43,84 @@
 </div>
 
 <style>
-	.primary {
-		button {
-			@apply bg-themePrimary text-white;
-			&:hover { @apply bg-themeDarkAlt; }
-			&:active { @apply bg-themeDark; }
-			svg circle, svg path { @apply stroke-white; }
+	.primary button {
+		@apply bg-themePrimary text-white hover:bg-themeDarkAlt active:bg-themeDark;
+		svg circle,
+		svg path {
+			@apply stroke-white;
 		}
 	}
 
 	div.secondary {
-		@apply border border-inputBorder;
-		&:disabled { @apply border-none; }
+		@apply border border-inputBorder disabled:border-none;
 		button {
 			@apply bg-white;
-			svg circle { @apply stroke-grey190; }
-		}
-	}
-
-	.secondary, .textButton {
-		button {
-			&:hover { @apply bg-grey20; }
-			&:active { @apply bg-grey30; }
-		}
-	}
-
-	.transparent {
-		button {
-			&:hover {
-				span { @apply text-themePrimary; }
-				svg path { @apply stroke-themePrimary; }
-			}
-			&:active {
-				span { @apply text-black; }
-				svg circle, svg path { @apply stroke-black; }
-			}
-			svg circle { @apply stroke-themeDark; }
-		}
-	}
-
-	.primary, .secondary, .textButton, .transparent {
-		button {
-			&:disabled {
-				span { @apply text-grey90; }
-				svg circle, svg path { @apply stroke-grey90; }
+			svg circle {
+				@apply stroke-grey190;
 			}
 		}
 	}
 
-	.primary, .secondary, .textButton {
+	.secondary button,
+	.textButton button {
+		@apply hover:bg-grey20 active:bg-grey30;
+	}
+
+	.transparent button {
+		@apply hover:text-themePrimary active:text-black;
+
+		&:hover svg path {
+			@apply stroke-themePrimary;
+		}
+
+		&:active {
+			svg circle,
+			svg path {
+				@apply stroke-black;
+			}
+		}
+		svg circle {
+			@apply stroke-themeDark;
+		}
+	}
+
+	.primary button,
+	.secondary button,
+	.textButton button,
+	.transparent button {
+		@apply disabled:text-grey90;
+		&:disabled {
+			svg circle,
+			svg path {
+				@apply stroke-grey90;
+			}
+		}
+	}
+
+	.primary,
+	.secondary,
+	.textButton {
 		@apply shadow-sm;
 		button {
-			&:disabled { @apply bg-grey20; }
+			@apply disabled:bg-grey20;
 		}
 	}
 
-	.secondary, .textButton, .transparent {
-		button {
-			span { @apply text-grey190; }
-			svg path { @apply stroke-grey130; }
+	.secondary button,
+	.textButton button,
+	.transparent button {
+		@apply text-grey190;
+		svg path {
+			@apply stroke-grey130;
 		}
 	}
 
-	.textButton, .transparent {
-		button {
-			svg circle { @apply stroke-themePrimary; }
-		}
+	.textButton button svg circle,
+	.transparent button svg circle {
+		@apply stroke-themePrimary;
 	}
 
 	button {
-		@apply flex h-full py-1.5 gap-2 justify-center items-center;
+		@apply flex h-full py-1.5 gap-2 justify-center items-center first:px-5 rounded-l-sm last:pr-2 rounded-r-sm;
 	}
 </style>
