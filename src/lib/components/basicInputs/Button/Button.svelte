@@ -51,7 +51,7 @@ disabled onHover active focused -->
 				transform="translate(1 1)"
 			/>
 		</svg>
-		<span class="smSemibold label">Click me</span>
+		<span class="smSemibold flex label">Click me</span>
 		<!-- <svg width="12" height="16" viewBox="0 2 14 1">
 			<path
 				class={appearance !== 'primary'
@@ -66,7 +66,7 @@ disabled onHover active focused -->
 		</svg> -->
 	</button>
 	<button type="button" class="{appearance} pr-2 rounded-r-sm">
-		<span class="smRegular {appearance !== 'primary' ? 'text-grey60' : 'text-white'}">|</span>
+		<span class="smRegular flex {appearance !== 'primary' ? 'text-grey60' : 'text-white'}">|</span>
 		<svg width="12" height="16" viewBox="0 2 14 1">
 			<path
 				class={appearance !== 'primary' ? 'stroke-grey130' : 'stroke-white'}
@@ -82,7 +82,7 @@ disabled onHover active focused -->
 
 <style>
 	button {
-		@apply flex py-1.5 gap-2 justify-center items-center;
+		@apply flex h-full py-1.5 gap-2 justify-center items-center ;
 	}
 
 	button:disabled {
@@ -106,26 +106,26 @@ disabled onHover active focused -->
 		@apply text-themePrimary;
 	}
 
-	.transparent:disabled:hover .label {
-		@apply text-grey90;
+	.transparent:hover svg circle,
+	.transparent:hover svg path {
+		@apply stroke-themePrimary;
+	}
+
+	.transparent:active svg circle,
+	.transparent:active svg path {
+		@apply stroke-black;
 	}
 
 	.transparent:active .label {
 		@apply text-black;
 	}
 
-	.transparent:hover svg circle,
-	.transparent:hover svg path {
-		@apply stroke-themePrimary;
-	}
-
 	.transparent:disabled:hover svg circle, .transparent:disabled:hover svg path {
 		@apply stroke-grey90;
 	}
 
-	.transparent:active svg circle,
-	.transparent:active svg path {
-		@apply stroke-black;
+	.transparent:disabled:hover .label {
+		@apply text-grey90;
 	}
 
 	.secondary,
