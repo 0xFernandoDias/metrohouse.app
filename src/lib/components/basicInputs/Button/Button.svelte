@@ -2,7 +2,7 @@
 	export let appearance: 'primary' | 'secondary' | 'textButton' | 'transparent' = 'primary'
 </script>
 
-<div class="flex min-w-max justify-center items-center rounded-sm {appearance}">
+<div class="min-w-max justify-center items-center rounded-sm {appearance}">
 	<button type="button" class={appearance}>
 		<svg viewBox="0 0 22 22">
 			<circle
@@ -17,7 +17,7 @@
 				transform="translate(1 1)"
 			/>
 		</svg>
-		<div class="flex flex-col items-start">
+		<div class="flex-col items-start">
 			<span class="smSemibold first-letter:uppercase">rest</span>
 			<span class="xsRegular first-letter:uppercase">this is a secondary text</span>
 		</div>
@@ -32,7 +32,7 @@
 		</svg> -->
 	</button>
 	<button type="button" class={appearance}>
-		<div class="flex h-4 w-[1px] bg-grey60" />
+		<div class="h-4 w-[1px] bg-grey60" />
 		<svg viewBox="0 2 14 1">
 			<path
 				fill="none"
@@ -100,10 +100,17 @@
 	}
 
 	.transparent button {
-		@apply hover:text-themePrimary active:text-black;
+		&:hover {
+			div span {
+				@apply text-themePrimary;
+			}
+			svg path {
+				@apply stroke-themePrimary;
+			}
+		}
 
-		&:hover svg path {
-			@apply stroke-themePrimary;
+		&:active div span {
+			active: text-black;
 		}
 
 		&:active {
@@ -122,11 +129,17 @@
 		@apply stroke-themePrimary;
 	}
 
+	div,
+	button,
+	svg {
+		@apply flex;
+	}
+
 	button {
-		@apply flex py-1.5 gap-2 justify-center items-center first:px-5 rounded-l-sm last:pr-2 rounded-r-sm;
+		@apply h-full py-1.5 gap-2 justify-center items-center first:px-5 rounded-l-sm last:pr-2 rounded-r-sm;
 	}
 
 	svg {
-		@apply flex min-h-5 w-4;
+		@apply min-h-5 w-4;
 	}
 </style>
