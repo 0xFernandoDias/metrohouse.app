@@ -34,10 +34,10 @@ disabled onHover active focused -->
 				transform="translate(1 1)"
 			/>
 		</svg>
-		<span class="label smSemibold">Click me</span>
-		<svg width="12" height="16" viewBox="0 2 14 1">
+		<span class="smSemibold label">Click me</span>
+		<!-- <svg width="12" height="16" viewBox="0 2 14 1">
 			<path
-				class={appearance === 'secondary' || appearance === 'subtle' || appearance === 'transparent'
+				class={appearance !== 'primary'
 					? 'stroke-grey130'
 					: 'stroke-white'}
 				fill="none"
@@ -46,13 +46,13 @@ disabled onHover active focused -->
 				stroke-width="2"
 				d="m1 1 6 6 6-6"
 			/>
-		</svg>
+		</svg> -->
 	</button>
 	<button type="button" class="{appearance} pr-2 rounded-r-sm">
 		<span class="smRegular {appearance !== 'primary' ? 'text-grey60' : 'text-white'}">|</span>
 		<svg width="12" height="16" viewBox="0 2 14 1">
 			<path
-				class={appearance === 'secondary' || appearance === 'subtle' || appearance === 'transparent'
+				class={appearance !== 'primary'
 					? 'stroke-grey130'
 					: 'stroke-white'}
 				fill="none"
