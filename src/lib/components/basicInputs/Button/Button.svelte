@@ -21,25 +21,18 @@
 
 <!-- 
 ...restProps, styleProps
-disabled onHover active focused -->
+ -->
 
 <!-- emit event -->
 
 <div
-	class="flex justify-center items-center rounded-sm {appearance !== 'transparent' &&
-		'shadow-sm'} {appearance === 'secondary' &&
-		'border-1 border-inputBorder border-solid disabled:border-none'}"
+	class="flex min-w-min justify-center items-center rounded-sm {appearance}"
+	class:border={appearance === 'secondary'}
+	class:border-inputBorder={appearance === 'secondary'}
 >
-	<button type="button" class="{appearance} px-5 rounded-l-sm">
+	<button type="button" class="px-5 rounded-l-sm">
 		<svg width="16" height="16" viewBox="0 0 22 22">
 			<circle
-				class={appearance === 'secondary'
-					? 'stroke-black'
-					: appearance === 'subtle'
-					? 'stroke-themePrimary'
-					: appearance === 'transparent'
-					? 'stroke-themeDark'
-					: 'stroke-white'}
 				cx="10"
 				cy="10"
 				r="10"
@@ -51,12 +44,9 @@ disabled onHover active focused -->
 				transform="translate(1 1)"
 			/>
 		</svg>
-		<span class="smSemibold flex label">Click me</span>
-		<!-- <svg width="12" height="16" viewBox="0 2 14 1">
+		<span class="smSemibold">Rest</span>
+		<!-- <svg width="16" height="16" viewBox="0 2 14 1">
 			<path
-				class={appearance !== 'primary'
-					? 'stroke-grey130'
-					: 'stroke-white'}
 				fill="none"
 				stroke-linecap="round"
 				stroke-linejoin="round"
@@ -65,11 +55,10 @@ disabled onHover active focused -->
 			/>
 		</svg> -->
 	</button>
-	<button type="button" class="{appearance} pr-2 rounded-r-sm">
-		<span class="smRegular flex {appearance !== 'primary' ? 'text-grey60' : 'text-white'}">|</span>
-		<svg width="12" height="16" viewBox="0 2 14 1">
+	<button type="button" class="pr-2 rounded-r-sm {appearance}">
+		<div class="h-4 w-[1px] bg-grey60" />
+		<svg width="16" height="16" viewBox="0 2 14 1">
 			<path
-				class={appearance !== 'primary' ? 'stroke-grey130' : 'stroke-white'}
 				fill="none"
 				stroke-linecap="round"
 				stroke-linejoin="round"
@@ -81,61 +70,142 @@ disabled onHover active focused -->
 </div>
 
 <style>
-	button {
-		@apply flex h-full py-1.5 gap-2 justify-center items-center ;
-	}
-
-	button:disabled {
-		@apply bg-grey20 hover:bg-grey20 text-grey90 hover:text-grey90;
-	}
-
-	button:disabled svg circle,
-	button:disabled svg path {
-		@apply stroke-grey90;
-	}
-
 	.primary {
-		@apply bg-themePrimary hover:bg-themeDarkAlt active:bg-themeDark text-white;
+		@apply shadow-sm;
+
+		button {
+			@apply bg-themePrimary text-white;
+			&:hover {
+				@apply bg-themeDarkAlt;
+			}
+			&:active {
+				@apply bg-themeDark;
+			}
+			&:disabled {
+				@apply bg-grey20 text-grey90;
+
+				svg circle,
+				svg path {
+					@apply stroke-grey90;
+				}
+			}
+			svg circle,
+			svg path {
+				@apply stroke-white;
+			}
+		}
 	}
 
 	.secondary {
-		@apply bg-white;
+		@apply shadow-sm;
+
+		&:disabled {
+			@apply border-none;
+		}
+
+		button {
+			@apply bg-white;
+			&:hover {
+				@apply bg-grey20;
+			}
+			&:active {
+				@apply bg-grey30;
+			}
+			&:disabled {
+				@apply bg-grey20 text-grey90;
+				span {
+					@apply text-grey90;
+				}
+				svg circle,
+				svg path {
+					@apply stroke-grey90;
+				}
+			}
+			span {
+				@apply text-grey190;
+			}
+			svg circle {
+				@apply stroke-grey190;
+			}
+			svg path {
+				@apply stroke-grey130;
+			}
+		}
 	}
 
-	.transparent:hover .label {
-		@apply text-themePrimary;
-	}
-
-	.transparent:hover svg circle,
-	.transparent:hover svg path {
-		@apply stroke-themePrimary;
-	}
-
-	.transparent:active svg circle,
-	.transparent:active svg path {
-		@apply stroke-black;
-	}
-
-	.transparent:active .label {
-		@apply text-black;
-	}
-
-	.transparent:disabled:hover svg circle, .transparent:disabled:hover svg path {
-		@apply stroke-grey90;
-	}
-
-	.transparent:disabled:hover .label {
-		@apply text-grey90;
-	}
-
-	.secondary,
 	.subtle {
-		@apply hover:bg-grey20 active:bg-grey30;
+		@apply shadow-sm;
+		button {
+			&:hover {
+				@apply bg-grey20;
+			}
+			&:active {
+				@apply bg-grey30;
+			}
+			&:disabled {
+				@apply bg-grey20 text-grey90;
+				span {
+					@apply text-grey90;
+				}
+				svg circle,
+				svg path {
+					@apply stroke-grey90;
+				}
+			}
+			span {
+				@apply text-grey190;
+			}
+			svg circle {
+				@apply stroke-themePrimary;
+			}
+			svg path {
+				@apply stroke-grey130;
+			}
+		}
 	}
 
-	.secondary,
-	.subtle,
 	.transparent {
-		@apply text-grey190;
+		button {
+			&:hover {
+				span {
+					@apply text-themePrimary;
+				}
+				svg circle,
+				svg path {
+					@apply stroke-themePrimary;
+				}
+			}
+			&:active {
+				span {
+					@apply text-black;
+				}
+				svg circle,
+				svg path {
+					@apply stroke-black;
+				}
+			}
+			&:disabled {
+				span {
+					@apply text-grey90;
+				}
+				svg circle,
+				svg path {
+					@apply stroke-grey90;
+				}
+			}
+			span {
+				@apply text-grey190;
+			}
+			svg circle {
+				@apply stroke-themeDark;
+			}
+			svg path {
+				@apply stroke-grey130;
+			}
+		}
+	}
+
+	button {
+		@apply flex h-full py-1.5 gap-2 justify-center items-center;
 	}
 </style>
