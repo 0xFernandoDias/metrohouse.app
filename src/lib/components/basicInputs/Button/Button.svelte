@@ -2,9 +2,9 @@
 	export let appearance: 'primary' | 'secondary' | 'textButton' | 'transparent' = 'primary'
 </script>
 
-<div class="flex min-w-min justify-center items-center rounded-sm {appearance}">
+<div class="flex max-w-min justify-center items-center rounded-sm {appearance}">
 	<button type="button" class={appearance}>
-		<svg width="16" height="16" viewBox="0 0 22 22">
+		<svg class="flex min-h-5 w-4" viewBox="0 0 22 22">
 			<circle
 				cx="10"
 				cy="10"
@@ -17,8 +17,8 @@
 				transform="translate(1 1)"
 			/>
 		</svg>
-		<span class="smSemibold">Rest</span>
-		<!-- <svg width="16" height="16" viewBox="0 2 14 1">
+		<span class="smSemibold first-letter:uppercase">rest</span>
+		<!-- <svg class="flex min-h-5 w-4" viewBox="0 2 14 1">
 			<path
 				fill="none"
 				stroke-linecap="round"
@@ -29,8 +29,8 @@
 		</svg> -->
 	</button>
 	<button type="button" class={appearance}>
-		<div class="h-4 w-[1px] bg-grey60" />
-		<svg width="16" height="16" viewBox="0 2 14 1">
+		<div class="flex h-4 w-[1px] bg-grey60" />
+		<svg class="flex min-h-5 w-4" viewBox="0 2 14 1">
 			<path
 				fill="none"
 				stroke-linecap="round"
@@ -51,13 +51,10 @@
 		}
 	}
 
-	div.secondary {
-		@apply border border-inputBorder disabled:border-none;
-		button {
-			@apply bg-white;
-			svg circle {
-				@apply stroke-grey190;
-			}
+	.secondary button {
+		@apply bg-white;
+		svg circle {
+			@apply stroke-grey190;
 		}
 	}
 
@@ -121,6 +118,6 @@
 	}
 
 	button {
-		@apply flex h-full py-1.5 gap-2 justify-center items-center first:px-5 rounded-l-sm last:pr-2 rounded-r-sm;
+		@apply flex py-1.5 gap-2 justify-center items-center first:px-5 rounded-l-sm last:pr-2 rounded-r-sm;
 	}
 </style>
