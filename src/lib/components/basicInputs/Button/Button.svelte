@@ -2,8 +2,8 @@
 	export let appearance: 'primary' | 'secondary' | 'textButton' | 'transparent' = 'primary'
 </script>
 
-<div class="min-w-max justify-center items-center rounded-sm {appearance}">
-	<button type="button" class={appearance}>
+<div class="min-w-max rounded-sm {appearance}">
+	<button type="button" class={appearance} disabled>
 		<svg viewBox="0 0 22 22">
 			<circle
 				cx="10"
@@ -18,8 +18,8 @@
 			/>
 		</svg>
 		<div class="flex-col items-start">
-			<span class="smSemibold first-letter:uppercase">rest</span>
-			<span class="xsRegular first-letter:uppercase">this is a secondary text</span>
+			<span class="smSemibold">rest</span>
+			<!-- <span class="xsRegular">this is a secondary text</span> -->
 		</div>
 		<!-- <svg viewBox="0 2 14 1">
 			<path
@@ -31,7 +31,7 @@
 			/>
 		</svg> -->
 	</button>
-	<button type="button" class={appearance}>
+	<button type="button" class={appearance} disabled>
 		<div class="h-4 w-[1px] bg-grey60" />
 		<svg viewBox="0 2 14 1">
 			<path
@@ -50,17 +50,13 @@
 	.secondary,
 	.textButton {
 		@apply shadow-sm;
-		button {
-			@apply disabled:bg-grey20;
-		}
 	}
 
-	.primary button,
-	.secondary button,
-	.textButton button,
-	.transparent button {
-		@apply disabled:text-grey90;
-		&:disabled {
+	.primary,
+	.secondary,
+	.textButton,
+	.transparent {
+		button {
 			svg circle,
 			svg path {
 				@apply stroke-grey90;
@@ -68,14 +64,21 @@
 		}
 	}
 
-	.secondary button,
-	.textButton button,
-	.transparent button {
-		span {
-			@apply first:text-grey190 last:text-grey130;
-		}
-		svg path {
-			@apply stroke-grey130;
+	.secondary,
+	.textButton,
+	.transparent {
+		button {
+			div span {
+				@apply first:text-grey190 last:text-grey130;
+			}
+			svg path {
+				@apply stroke-grey130;
+			}
+			&:hover {
+				svg path {
+					@apply stroke-grey190;
+				}
+			}
 		}
 	}
 
@@ -85,7 +88,10 @@
 	}
 
 	.primary button {
-		@apply bg-themePrimary text-white hover:bg-themeDarkAlt active:bg-themeDark;
+		@apply bg-themePrimary hover:bg-themeDarkAlt active:bg-themeDark;
+		div span {
+			@apply text-white
+		}
 		svg circle,
 		svg path {
 			@apply stroke-white;
@@ -99,34 +105,35 @@
 		}
 	}
 
+	.textButton button svg circle {
+		@apply stroke-themePrimary;
+	}
+
 	.transparent button {
+		svg circle {
+			@apply stroke-themeDark;
+		}
+
 		&:hover {
 			div span {
 				@apply text-themePrimary;
 			}
-			svg path {
+			svg circle, svg path {
 				@apply stroke-themePrimary;
 			}
 		}
 
-		&:active div span {
-			active: text-black;
-		}
-
 		&:active {
-			svg circle,
+			div span {
+				@apply text-black;
+			}
+			svg circle { 
+				@apply stroke-themeDarker
+			}
 			svg path {
 				@apply stroke-black;
 			}
 		}
-		svg circle {
-			@apply stroke-themeDark;
-		}
-	}
-
-	.textButton button svg circle,
-	.transparent button svg circle {
-		@apply stroke-themePrimary;
 	}
 
 	div,
@@ -135,11 +142,20 @@
 		@apply flex;
 	}
 
+	div,span
 	button {
-		@apply h-full py-1.5 gap-2 justify-center items-center first:px-5 rounded-l-sm last:pr-2 rounded-r-sm;
+		@apply justify-center items-center;
+	}
+
+	button {
+		@apply h-full py-1.5 gap-2 first:px-5 rounded-l-sm last:pr-2 rounded-r-sm;
 	}
 
 	svg {
 		@apply min-h-5 w-4;
+	}
+
+	span {
+		@apply first-letter:uppercase;
 	}
 </style>

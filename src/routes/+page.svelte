@@ -13,4 +13,3 @@
 	<Button appearance="textButton" />
 	<Button appearance="transparent" />
 </div>
-
