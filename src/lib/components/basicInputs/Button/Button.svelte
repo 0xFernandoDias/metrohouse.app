@@ -31,7 +31,7 @@
 			/>
 		</svg> -->
 	</button>
-	<button type="button" class="{appearance}">
+	<button type="button" class={appearance}>
 		<div class="h-4 w-[1px] bg-grey60" />
 		<svg viewBox="0 2 14 1">
 			<path
@@ -63,7 +63,7 @@
 
 			&:disabled {
 				div span {
-					@apply first:text-grey90 last:text-grey90 hover:first:text-grey90 last:text-grey90;
+					@apply first:text-grey90 last:text-grey90 hover:first:text-grey90 last:text-grey90 cursor-not-allowed;
 				}
 				svg circle,
 				svg path {
@@ -89,7 +89,7 @@
 				}
 			}
 			&:disabled {
-				
+				@apply cursor-not-allowed;
 				svg path {
 					@apply stroke-grey90 hover:stroke-grey90;
 				}
@@ -101,7 +101,7 @@
 	.secondary {
 		button {
 			&:disabled {
-				@apply bg-grey20 hover:bg-grey20;
+				@apply bg-grey20 hover:bg-grey20 cursor-not-allowed;
 			}
 		}
 	}
@@ -165,6 +165,7 @@
 		}
 
 		&:disabled {
+			@apply cursor-not-allowed;
 			svg circle,
 			svg path {
 				@apply stroke-grey90;
@@ -179,12 +180,12 @@
 	}
 
 	div,
-	span button {
+	button {
 		@apply justify-center items-center;
 	}
 
 	button {
-		@apply h-full py-1.5 gap-2 first:px-5 rounded-l-sm last:pr-2 rounded-r-sm items-center;
+		@apply h-full py-1.5 gap-2 first:px-5 rounded-l-sm last:pr-2 rounded-r-sm;
 	}
 
 	svg {
