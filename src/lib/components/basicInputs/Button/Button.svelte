@@ -3,7 +3,7 @@
 </script>
 
 <div class="min-w-max rounded-sm {appearance}">
-	<button type="button" class={appearance} disabled>
+	<button type="button" class={appearance}>
 		<svg viewBox="0 0 22 22">
 			<circle
 				cx="10"
@@ -19,7 +19,7 @@
 		</svg>
 		<div class="flex-col items-start">
 			<span class="smSemibold">rest</span>
-			<!-- <span class="xsRegular">this is a secondary text</span> -->
+			<span class="xsRegular">this is a secondary text</span>
 		</div>
 		<!-- <svg viewBox="0 2 14 1">
 			<path
@@ -31,7 +31,7 @@
 			/>
 		</svg> -->
 	</button>
-	<button type="button" class={appearance} disabled>
+	<button type="button" class="{appearance}">
 		<div class="h-4 w-[1px] bg-grey60" />
 		<svg viewBox="0 2 14 1">
 			<path
@@ -184,7 +184,7 @@
 	}
 
 	button {
-		@apply h-full py-1.5 gap-2 first:px-5 rounded-l-sm last:pr-2 rounded-r-sm;
+		@apply h-full py-1.5 gap-2 first:px-5 rounded-l-sm last:pr-2 rounded-r-sm items-center;
 	}
 
 	svg {
