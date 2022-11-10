@@ -47,8 +47,7 @@
 
 <style>
 	.primary,
-	.secondary,
-	.textButton {
+	.secondary {
 		@apply shadow-sm;
 	}
 
@@ -60,6 +59,16 @@
 			svg circle,
 			svg path {
 				@apply stroke-grey90;
+			}
+
+			&:disabled {
+				div span {
+					@apply first:text-grey90 last:text-grey90 hover:first:text-grey90 last:text-grey90;
+				}
+				svg circle,
+				svg path {
+					@apply stroke-grey90 hover:stroke-grey90;
+				}
 			}
 		}
 	}
@@ -79,6 +88,21 @@
 					@apply stroke-grey190;
 				}
 			}
+			&:disabled {
+				
+				svg path {
+					@apply stroke-grey90 hover:stroke-grey90;
+				}
+			}
+		}
+	}
+
+	.primary,
+	.secondary {
+		button {
+			&:disabled {
+				@apply bg-grey20 hover:bg-grey20;
+			}
 		}
 	}
 
@@ -90,7 +114,7 @@
 	.primary button {
 		@apply bg-themePrimary hover:bg-themeDarkAlt active:bg-themeDark;
 		div span {
-			@apply text-white
+			@apply text-white;
 		}
 		svg circle,
 		svg path {
@@ -105,8 +129,12 @@
 		}
 	}
 
-	.textButton button svg circle {
-		@apply stroke-themePrimary;
+	.textButton button {
+		@apply disabled:hover:bg-transparent;
+
+		svg circle {
+			@apply stroke-themePrimary;
+		}
 	}
 
 	.transparent button {
@@ -118,7 +146,8 @@
 			div span {
 				@apply text-themePrimary;
 			}
-			svg circle, svg path {
+			svg circle,
+			svg path {
 				@apply stroke-themePrimary;
 			}
 		}
@@ -127,11 +156,18 @@
 			div span {
 				@apply text-black;
 			}
-			svg circle { 
-				@apply stroke-themeDarker
+			svg circle {
+				@apply stroke-themeDarker;
 			}
 			svg path {
 				@apply stroke-black;
+			}
+		}
+
+		&:disabled {
+			svg circle,
+			svg path {
+				@apply stroke-grey90;
 			}
 		}
 	}
@@ -142,8 +178,8 @@
 		@apply flex;
 	}
 
-	div,span
-	button {
+	div,
+	span button {
 		@apply justify-center items-center;
 	}
 
