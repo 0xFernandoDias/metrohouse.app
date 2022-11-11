@@ -63,7 +63,7 @@
 
 			&:disabled {
 				div span {
-					@apply first:text-grey90 last:text-grey90 hover:first:text-grey90 last:text-grey90 cursor-not-allowed;
+					@apply first:text-grey90 last:text-grey90 cursor-not-allowed hover:first:text-grey90 hover:last:text-grey90;
 				}
 				svg circle,
 				svg path {
@@ -101,7 +101,7 @@
 	.secondary {
 		button {
 			&:disabled {
-				@apply bg-grey20 hover:bg-grey20 cursor-not-allowed;
+				@apply bg-grey20 cursor-not-allowed hover:bg-grey20;
 			}
 		}
 	}
@@ -185,7 +185,7 @@
 	}
 
 	button {
-		@apply h-full py-1.5 gap-2 first:px-5 rounded-l-sm last:pr-2 rounded-r-sm;
+		@apply h-full py-1.5 first:px-5 last:pr-2 gap-2 rounded-l-sm rounded-r-sm;
 	}
 
 	svg {
