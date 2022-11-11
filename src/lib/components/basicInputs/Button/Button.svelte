@@ -3,7 +3,7 @@
 </script>
 
 <div class="min-w-max rounded-sm {appearance}">
-	<button type="button" class={appearance}>
+	<button type="button" class={appearance} disabled>
 		<svg viewBox="0 0 22 22">
 			<circle
 				cx="10"
@@ -31,7 +31,7 @@
 			/>
 		</svg> -->
 	</button>
-	<button type="button" class={appearance}>
+	<button type="button" class={appearance} disabled>
 		<div class="h-4 w-[1px] bg-grey60" />
 		<svg viewBox="0 2 14 1">
 			<path
@@ -56,11 +56,6 @@
 	.textButton,
 	.transparent {
 		button {
-			svg circle,
-			svg path {
-				@apply stroke-grey90;
-			}
-
 			&:disabled {
 				div span {
 					@apply first:text-grey90 last:text-grey90 cursor-not-allowed hover:first:text-grey90 hover:last:text-grey90;
