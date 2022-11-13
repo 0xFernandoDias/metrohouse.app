@@ -125,13 +125,13 @@
 	}
 
 	.group {
+		@apply min-h-full py-1.5 gap-2 items-center;
 		&:disabled {
 			@apply cursor-not-allowed;
 			svg circle,
 			svg path {
 				@apply stroke-grey90;
 			}
-
 			div span {
 				@apply text-grey90;
 			}
@@ -154,10 +154,6 @@
 	button,
 	svg {
 		@apply flex;
-	}
-
-	button {
-		@apply h-full py-1.5 gap-2 items-center;
 	}
 
 	svg {

@@ -7,7 +7,7 @@
 </svelte:head>
 
 <!-- <div class="grid grid-cols-12"> -->
-<div class="flex">
+<div class="flex flex-col">
 	<Button />
 	<Button appearance="secondary" />
 	<Button appearance="textButton" />
