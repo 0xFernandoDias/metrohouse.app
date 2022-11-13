@@ -18,8 +18,8 @@
 			/>
 		</svg>
 		<div class="flex-col items-start">
-			<span class="smSemibold" class:text-grey190={appearance !== 'primary'}>rest</span>
-			<span class="xsRegular" class:text-grey130={appearance !== 'primary'}
+			<span class="smSemibold">rest</span>
+			<span class="xsRegular"
 				>this is a secondary text</span
 			>
 		</div>
@@ -45,6 +45,12 @@
 		.group {
 			svg path {
 				@apply stroke-grey130;
+			}
+			div span:first-child {
+				@apply smSemibold text-grey190;
+			}
+			div span {
+				@apply xsRegular text-grey130;
 			}
 		}
 	}
