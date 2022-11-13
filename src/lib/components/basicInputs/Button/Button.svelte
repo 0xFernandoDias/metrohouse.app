@@ -26,10 +26,8 @@
 				class:stroke-grey190={appearance === 'secondary'}
 				class:stroke-themePrimary={appearance === 'textButton'}
 				class:stroke-themeDark={appearance === 'transparent'}
-
 				class:group-hover:stroke-themePrimary={appearance === 'transparent'}
 				class:group-active:stroke-themeDarker={appearance === 'transparent'}
-
 				cx="10"
 				cy="10"
 				r="10"
@@ -46,20 +44,18 @@
 				class="smSemibold first-letter:uppercase group-disabled:text-grey90"
 				class:text-white={appearance === 'primary'}
 				class:text-grey190={appearance !== 'primary'}
-
 				class:group-hover:text-themePrimary={appearance === 'transparent'}
-				class:group-active:text-black={appearance === 'transparent'}>
-				
+				class:group-active:text-black={appearance === 'transparent'}
+			>
 				rest</span
 			>
 			<span
 				class="xsRegular first-letter:uppercase group-disabled:text-grey90"
 				class:text-white={appearance === 'primary'}
 				class:text-grey130={appearance !== 'primary'}
-
 				class:group-hover:text-themePrimary={appearance === 'transparent'}
-				class:group-active:text-black={appearance === 'transparent'}>
-				
+				class:group-active:text-black={appearance === 'transparent'}
+			>
 				this is a secondary text</span
 			>
 		</div>
@@ -82,11 +78,9 @@
 				class="group-disabled:stroke-grey90 group-disabled:hover:stroke-grey90"
 				class:stroke-white={appearance === 'primary'}
 				class:stroke-grey130={appearance !== 'primary'}
-
 				class:group-hover:stroke-grey190={appearance === 'secondary' || appearance === 'textButton'}
 				class:group-hover:stroke-themePrimary={appearance === 'transparent'}
 				class:group-active:stroke-black={appearance === 'transparent'}
-				
 				fill="none"
 				stroke-linecap="round"
 				stroke-linejoin="round"
