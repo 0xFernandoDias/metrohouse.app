@@ -18,9 +18,9 @@
 			/>
 		</svg>
 		<div class="flex-col items-start">
-			<span class="smSemibold" class:text-grey190={appearance !== 'primary'}> rest</span>
-			<span class="xsRegular" class:text-grey130={appearance !== 'primary'}>
-				this is a secondary text</span
+			<span class="smSemibold" class:text-grey190={appearance !== 'primary'}>rest</span>
+			<span class="xsRegular" class:text-grey130={appearance !== 'primary'}
+				>this is a secondary text</span
 			>
 		</div>
 	</button>
@@ -39,74 +39,87 @@
 </div>
 
 <style>
-	.primary {
-		.group {
-			@apply shadow-sm bg-themePrimary hover:bg-themeDarkAlt active:bg-themeDark disabled:bg-grey20 disabled:hover:bg-grey20;
-			svg circle,
-			svg path {
-				@apply stroke-white;
-			}
-			div span {
-				@apply text-white;
-			}
-		}
-	}
-	.secondary {
-		.group {
-			@apply shadow-sm bg-white hover:bg-grey20 active:bg-grey30 disabled:bg-grey20 disabled:hover:bg-grey20;
-			svg circle {
-				@apply stroke-grey190;
-			}
-			svg path {
-				@apply stroke-grey130 group-hover:stroke-grey190;
-			}
-		}
-	}
-
-	.textButton {
-		.group {
-			@apply hover:bg-grey20 active:bg-grey30 disabled:hover:bg-transparent;
-			svg circle {
-				@apply stroke-themePrimary;
-			}
-			svg path {
-				@apply stroke-grey130 group-hover:stroke-grey190;
-			}
-		}
-	}
-
+	.secondary,
+	.textButton,
 	.transparent {
 		.group {
-			svg circle {
-				@apply stroke-themeDark group-hover:stroke-themePrimary group-active:stroke-themeDarker;
+			svg path {
+				@apply stroke-grey130;
+			}
+		}
+	}
+	.primary,
+	.secondary {
+		.group {
+			@apply shadow-sm disabled:bg-grey20 disabled:hover:bg-grey20;
+		}
+	}
+	.secondary,
+	.textButton {
+		.group {
+			@apply hover:bg-grey20 active:bg-grey30;
+			svg path {
+				@apply group-hover:stroke-grey190;
+			}
+		}
+	}
+	.primary .group {
+		@apply bg-themePrimary hover:bg-themeDarkAlt active:bg-themeDark;
+		svg circle,
+		svg path {
+			@apply stroke-white;
+		}
+		div span {
+			@apply text-white;
+		}
+	}
+
+	.secondary .group {
+		@apply bg-white;
+		svg circle {
+			@apply stroke-grey190;
+		}
+	}
+
+	.textButton .group {
+		@apply disabled:hover:bg-transparent;
+		svg circle {
+			@apply stroke-themePrimary;
+		}
+	}
+
+	.transparent .group {
+		svg circle,
+		svg path {
+			@apply group-hover:stroke-themePrimary;
+		}
+		svg circle {
+			@apply stroke-themeDark group-active:stroke-themeDarker;
+		}
+		div span {
+			@apply group-hover:text-themePrimary group-active:text-black;
+		}
+		svg path {
+			@apply group-active:stroke-black;
+		}
+		&:hover {
+			svg circle,
+			svg path {
+				@apply stroke-themePrimary;
 			}
 			div span {
-				@apply group-hover:text-themePrimary group-active:text-black;
+				@apply text-themePrimary;
+			}
+		}
+		&:active {
+			svg circle {
+				@apply stroke-themeDarker;
+			}
+			div span {
+				@apply text-black;
 			}
 			svg path {
-				@apply stroke-grey130 group-hover:stroke-themePrimary group-active:stroke-black;
-			}
-			&:hover {
-				svg circle {
-					@apply stroke-themePrimary;
-				}
-				div span {
-					@apply text-themePrimary;
-				}
-				svg path {
-					@apply stroke-themePrimary;
-				}
-			}
-			&:active {
-				svg circle {
-					@apply stroke-themeDarker;
-				}
-				div span {
-					@apply text-black;
-				}
-				svg path {
-					@apply stroke-black;
-				}
+				@apply stroke-black;
 			}
 		}
 	}
@@ -114,7 +127,6 @@
 	.group {
 		&:disabled {
 			@apply cursor-not-allowed;
-
 			svg circle,
 			svg path {
 				@apply stroke-grey90;
@@ -123,7 +135,6 @@
 			div span {
 				@apply text-grey90;
 			}
-
 			&:hover {
 				svg circle,
 				svg path {
@@ -133,7 +144,6 @@
 					@apply text-grey90;
 				}
 			}
-
 			/* &:active {
 				@apply !bg-transparent
 			} */
