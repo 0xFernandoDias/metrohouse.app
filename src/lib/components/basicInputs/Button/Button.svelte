@@ -3,9 +3,10 @@
 </script>
 
 <div class="min-w-max rounded-sm {appearance}">
-	<button type="button" class="group px-5 rounded-l-sm">
+	<button type="button" class="group px-5 rounded-l-sm" disabled>
 		<svg viewBox="0 0 22 22">
 			<circle
+				class="left-icon"
 				cx="10"
 				cy="10"
 				r="10"
@@ -18,16 +19,25 @@
 			/>
 		</svg>
 		<div class="flex-col items-start">
-			<span class="smSemibold" class:text-grey190={appearance !== 'primary'}>rest</span>
-			<span class="xsRegular" class:text-grey130={appearance !== 'primary'}
-				>this is a secondary text</span
-			>
+			<span class="mainText">rest</span>
+			<span class="secondaryText">this is a secondary text</span>
 		</div>
+		<svg viewBox="0 2 14 1">
+			<path
+				class="right-icon"
+				fill="none"
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				stroke-width="2"
+				d="m1 1 6 6 6-6"
+			/>
+		</svg>
 	</button>
-	<button type="button" class="group pr-2 rounded-r-sm">
+	<button type="button" class="group pr-2 rounded-r-sm" disabled>
 		<div class="h-4 w-[1px] bg-grey60" />
 		<svg viewBox="0 2 14 1">
 			<path
+				class="dropdown-icon"
 				fill="none"
 				stroke-linecap="round"
 				stroke-linejoin="round"
@@ -43,7 +53,13 @@
 	.textButton,
 	.transparent {
 		.group {
-			svg path {
+			.mainText {
+				@apply text-grey190;
+			}
+			.secondaryText {
+				@apply text-grey130;
+			}
+			.dropdown-icon {
 				@apply stroke-grey130;
 			}
 		}
@@ -58,15 +74,16 @@
 	.textButton {
 		.group {
 			@apply hover:bg-grey20 active:bg-grey30;
-			svg path {
+			.dropdown-icon {
 				@apply group-hover:stroke-grey190;
 			}
 		}
 	}
 	.primary .group {
 		@apply bg-themePrimary hover:bg-themeDarkAlt active:bg-themeDark;
-		svg circle,
-		svg path {
+		.left-icon,
+		.right-icon,
+		.dropdown-icon {
 			@apply stroke-white;
 		}
 		div span {
@@ -76,35 +93,33 @@
 
 	.secondary .group {
 		@apply bg-white;
-		svg circle {
+		.left-icon,
+		.right-icon {
 			@apply stroke-grey190;
 		}
 	}
 
 	.textButton .group {
 		@apply disabled:hover:bg-transparent;
-		svg circle {
+		.left-icon {
 			@apply stroke-themePrimary;
+		}
+		.right-icon {
+			@apply stroke-grey190;
 		}
 	}
 
 	.transparent .group {
-		svg circle,
-		svg path {
-			@apply group-hover:stroke-themePrimary;
+		.left-icon {
+			@apply stroke-themeDark;
 		}
-		svg circle {
-			@apply stroke-themeDark group-active:stroke-themeDarker;
-		}
-		div span {
-			@apply group-hover:text-themePrimary group-active:text-black;
-		}
-		svg path {
-			@apply group-active:stroke-black;
+		.right-icon {
+			@apply stroke-grey190;
 		}
 		&:hover {
-			svg circle,
-			svg path {
+			.left-icon,
+			.right-icon,
+			.dropdown-icon {
 				@apply stroke-themePrimary;
 			}
 			div span {
@@ -112,13 +127,14 @@
 			}
 		}
 		&:active {
-			svg circle {
+			.left-icon {
 				@apply stroke-themeDarker;
 			}
 			div span {
 				@apply text-black;
 			}
-			svg path {
+			.right-icon,
+			.dropdown-icon {
 				@apply stroke-black;
 			}
 		}
@@ -126,18 +142,26 @@
 
 	.group {
 		@apply min-h-full py-1.5 gap-2 items-center;
+		.mainText {
+			@apply smSemibold;
+		}
+		.secondaryText {
+			@apply xsRegular;
+		}
 		&:disabled {
 			@apply cursor-not-allowed;
-			svg circle,
-			svg path {
+			.left-icon,
+			.right-icon,
+			.dropdown-icon {
 				@apply stroke-grey90;
 			}
 			div span {
 				@apply text-grey90;
 			}
 			&:hover {
-				svg circle,
-				svg path {
+				.left-icon,
+				.right-icon,
+				.dropdown-icon {
 					@apply stroke-grey90;
 				}
 				div span {
@@ -151,7 +175,7 @@
 	}
 
 	div,
-	button,
+	.group,
 	svg {
 		@apply flex;
 	}
