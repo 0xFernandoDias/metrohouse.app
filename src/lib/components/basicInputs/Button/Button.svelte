@@ -2,34 +2,10 @@
 	export let appearance: 'primary' | 'secondary' | 'textButton' | 'transparent' = 'primary'
 </script>
 
-<div
-	class="min-w-max rounded-sm"
-	class:shadow-sm={appearance === 'primary' || appearance === 'secondary'}
->
-	<button
-		type="button"
-		class="group px-5 rounded-l-sm"
-		class:bg-themePrimary={appearance === 'primary'}
-		class:bg-white={appearance === 'secondary'}
-		class:bg-transparent={appearance === 'textButton' || appearance === 'transparent'}
-		class:hover:bg-themeDarkAlt={appearance === 'primary'}
-		class:hover:bg-grey20={appearance === 'secondary' || appearance === 'textButton'}
-		class:active:bg-themeDark={appearance === 'primary'}
-		class:active:bg-grey30={appearance === 'secondary' || appearance === 'textButton'}
-		class:disabled:bg-grey20={appearance === 'primary' || appearance === 'secondary'}
-		class:disabled:hover:bg-grey20={appearance === 'primary' || appearance === 'secondary'}
-		class:disabled:hover:bg-transparent={appearance === 'textButton' ||
-			appearance === 'transparent'}
-			disabled
-	>
+<div class="min-w-max rounded-sm {appearance}">
+	<button type="button" class="group px-5 rounded-l-sm">
 		<svg viewBox="0 0 22 22">
 			<circle
-				class:stroke-white={appearance === 'primary'}
-				class:stroke-grey190={appearance === 'secondary'}
-				class:stroke-themePrimary={appearance === 'textButton'}
-				class:stroke-themeDark={appearance === 'transparent'}
-				class:group-hover:stroke-themePrimary={appearance === 'transparent'}
-				class:group-active:stroke-themeDarker={appearance === 'transparent'}
 				cx="10"
 				cy="10"
 				r="10"
@@ -42,50 +18,16 @@
 			/>
 		</svg>
 		<div class="flex-col items-start">
-			<span
-				class="smSemibold"
-				class:text-white={appearance === 'primary'}
-				class:text-grey190={appearance !== 'primary'}
-				class:group-hover:text-themePrimary={appearance === 'transparent'}
-				class:group-active:text-black={appearance === 'transparent'}
-			>
-				rest</span
-			>
-			<span
-				class="xsRegular"
-				class:text-white={appearance === 'primary'}
-				class:text-grey130={appearance !== 'primary'}
-				class:group-hover:text-themePrimary={appearance === 'transparent'}
-				class:group-active:text-black={appearance === 'transparent'}
-			>
+			<span class="smSemibold" class:text-grey190={appearance !== 'primary'}> rest</span>
+			<span class="xsRegular" class:text-grey130={appearance !== 'primary'}>
 				this is a secondary text</span
 			>
 		</div>
 	</button>
-	<button
-		type="button"
-		class="group pr-2 rounded-r-sm"
-		class:bg-themePrimary={appearance === 'primary'}
-		class:bg-white={appearance === 'secondary'}
-		class:bg-transparent={appearance === 'textButton' || appearance === 'transparent'}
-		class:hover:bg-themeDarkAlt={appearance === 'primary'}
-		class:hover:bg-grey20={appearance === 'secondary' || appearance === 'textButton'}
-		class:active:bg-themeDark={appearance === 'primary'}
-		class:active:bg-grey30={appearance === 'secondary' || appearance === 'textButton'}
-		class:disabled:bg-grey20={appearance === 'primary' || appearance === 'secondary'}
-		class:disabled:hover:bg-grey20={appearance === 'primary' || appearance === 'secondary'}
-		class:disabled:hover:bg-transparent={appearance === 'textButton' ||
-			appearance === 'transparent'}
-			disabled
-	>
+	<button type="button" class="group pr-2 rounded-r-sm {appearance}">
 		<div class="h-4 w-[1px] bg-grey60" />
 		<svg viewBox="0 2 14 1">
 			<path
-				class:stroke-white={appearance === 'primary'}
-				class:stroke-grey130={appearance !== 'primary'}
-				class:group-hover:stroke-grey190={appearance === 'secondary' || appearance === 'textButton'}
-				class:group-hover:stroke-themePrimary={appearance === 'transparent'}
-				class:group-active:stroke-black={appearance === 'transparent'}
 				fill="none"
 				stroke-linecap="round"
 				stroke-linejoin="round"
@@ -97,6 +39,78 @@
 </div>
 
 <style>
+	.primary {
+		.group {
+			@apply shadow-sm bg-themePrimary hover:bg-themeDarkAlt active:bg-themeDark disabled:bg-grey20 disabled:hover:bg-grey20;
+			svg circle,
+			svg path {
+				@apply stroke-white;
+			}
+			div span {
+				@apply text-white;
+			}
+		}
+	}
+	.secondary {
+		.group {
+			@apply shadow-sm bg-white hover:bg-grey20 active:bg-grey30 disabled:bg-grey20 disabled:hover:bg-grey20;
+			svg circle {
+				@apply stroke-grey190;
+			}
+			svg path {
+				@apply stroke-grey130 group-hover:stroke-grey190;
+			}
+		}
+	}
+
+	.textButton {
+		.group {
+			@apply hover:bg-grey20 active:bg-grey30 disabled:hover:bg-transparent;
+			svg circle {
+				@apply stroke-themePrimary;
+			}
+			svg path {
+				@apply stroke-grey130 group-hover:stroke-grey190;
+			}
+		}
+	}
+
+	.transparent {
+		.group {
+			svg circle {
+				@apply stroke-themeDark group-hover:stroke-themePrimary group-active:stroke-themeDarker;
+			}
+			div span {
+				@apply group-hover:text-themePrimary group-active:text-black;
+			}
+			svg path {
+				@apply stroke-grey130 group-hover:stroke-themePrimary group-active:stroke-black;
+			}
+			&:hover {
+				svg circle {
+					@apply stroke-themePrimary;
+				}
+				div span {
+					@apply text-themePrimary;
+				}
+				svg path {
+					@apply stroke-themePrimary;
+				}
+			}
+			&:active {
+				svg circle {
+					@apply stroke-themeDarker;
+				}
+				div span {
+					@apply text-black;
+				}
+				svg path {
+					@apply stroke-black;
+				}
+			}
+		}
+	}
+
 	.group {
 		&:disabled {
 			@apply cursor-not-allowed;
@@ -126,7 +140,9 @@
 		}
 	}
 
-	div, button, svg {
+	div,
+	button,
+	svg {
 		@apply flex;
 	}
 
