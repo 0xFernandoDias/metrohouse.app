@@ -1,5 +1,6 @@
 <script>
 	import Button from '$lib/components/basicInputs/Button/Button.svelte'
+	import Checkbox from '$lib/components/basicInputs/Checkbox/Checkbox.svelte'
 </script>
 
 <svelte:head>
@@ -7,7 +8,9 @@
 </svelte:head>
 
 <!-- <div class="grid grid-cols-12"> -->
-<div class="flex flex-col">
+
+<!-- Button -->
+<!-- <div class="flex flex-col">
 	<Button leftIcon rightIcon dropdownButton
 		><svelte:fragment slot="secondaryText">secondary text</svelte:fragment></Button
 	>
@@ -32,4 +35,11 @@
 	<Button leftIcon rightIcon dropdownButton disabled appearance="transparent"
 		><svelte:fragment slot="secondaryText">secondary text</svelte:fragment></Button
 	>
+</div> -->
+
+<div class="flex flex-col">
+	<Checkbox />
 </div>
+
+<style>
+</style>
