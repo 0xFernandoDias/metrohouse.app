@@ -3,6 +3,7 @@
 	export let leftIcon: boolean = false
 	export let rightIcon: boolean = false
 	export let dropdownButton: boolean = false
+	export let disabled: boolean = false
 	// export let href: string = ''
 	// export let data: any = null
 	// export let menuProps: any = null
@@ -10,11 +11,11 @@
 </script>
 
 <div class="min-w-max rounded-sm {appearance}">
-	<button type="button" class="group px-5 rounded-l-sm" disabled>
+	<button type="button" class="group px-5 rounded-l-sm" {disabled}>
+		<!-- See later: slot icons -->
 		{#if leftIcon}
-			<svg viewBox="0 0 22 22">
+			<svg viewBox="0 0 22 22" class="left-icon">
 				<circle
-					class="left-icon"
 					cx="10"
 					cy="10"
 					r="10"
@@ -32,9 +33,8 @@
 			<span class="secondaryText"><slot name="secondaryText" /></span>
 		</div>
 		{#if rightIcon}
-			<svg viewBox="0 2 14 1">
+			<svg viewBox="0 2 14 1" class="right-icon">
 				<path
-					class="right-icon"
 					fill="none"
 					stroke-linecap="round"
 					stroke-linejoin="round"
@@ -45,11 +45,10 @@
 		{/if}
 	</button>
 	{#if dropdownButton}
-		<button type="button" class="group pr-2 rounded-r-sm" disabled>
+		<button type="button" class="group pr-2 rounded-r-sm" {disabled}>
 			<div class="h-4 w-[1px] bg-grey60" />
-			<svg viewBox="0 2 14 1">
+			<svg viewBox="0 2 14 1" class="dropdown-icon">
 				<path
-					class="dropdown-icon"
 					fill="none"
 					stroke-linecap="round"
 					stroke-linejoin="round"
@@ -72,7 +71,7 @@
 			.secondaryText {
 				@apply text-grey130;
 			}
-			.dropdown-icon {
+			.dropdown-icon :first-child {
 				@apply stroke-grey130;
 			}
 		}
@@ -87,16 +86,16 @@
 	.textButton {
 		.group {
 			@apply hover:bg-grey20 active:bg-grey30;
-			.dropdown-icon {
+			.dropdown-icon :first-child {
 				@apply group-hover:stroke-grey190;
 			}
 		}
 	}
 	.primary .group {
 		@apply bg-themePrimary hover:bg-themeDarkAlt active:bg-themeDark;
-		.left-icon,
-		.right-icon,
-		.dropdown-icon {
+		.left-icon :first-child,
+		.right-icon :first-child,
+		.dropdown-icon :first-child {
 			@apply stroke-white;
 		}
 		.mainText,
@@ -107,33 +106,33 @@
 
 	.secondary .group {
 		@apply bg-white;
-		.left-icon,
-		.right-icon {
+		.left-icon :first-child,
+		.right-icon :first-child {
 			@apply stroke-grey190;
 		}
 	}
 
 	.textButton .group {
 		@apply disabled:hover:bg-transparent;
-		.left-icon {
+		.left-icon :first-child {
 			@apply stroke-themePrimary;
 		}
-		.right-icon {
+		.right-icon :first-child {
 			@apply stroke-grey190;
 		}
 	}
 
 	.transparent .group {
-		.left-icon {
+		.left-icon :first-child {
 			@apply stroke-themeDark;
 		}
-		.right-icon {
+		.right-icon :first-child {
 			@apply stroke-grey190;
 		}
 		&:hover {
-			.left-icon,
-			.right-icon,
-			.dropdown-icon {
+			.left-icon :first-child,
+			.right-icon :first-child,
+			.dropdown-icon :first-child {
 				@apply stroke-themePrimary;
 			}
 			.mainText,
@@ -142,21 +141,21 @@
 			}
 		}
 		&:active {
-			.left-icon {
+			.left-icon :first-child {
 				@apply stroke-themeDarker;
 			}
 			.mainText,
 			.secondaryText {
 				@apply text-black;
 			}
-			.right-icon,
-			.dropdown-icon {
+			.right-icon :first-child,
+			.dropdown-icon :first-child {
 				@apply stroke-black;
 			}
 		}
 	}
 
-	.group {
+	button.group {
 		@apply min-h-full py-1.5 gap-2 items-center;
 		.mainText {
 			@apply smSemibold;
@@ -166,9 +165,9 @@
 		}
 		&:disabled {
 			@apply cursor-not-allowed;
-			.left-icon,
-			.right-icon,
-			.dropdown-icon {
+			.left-icon :first-child,
+			.right-icon :first-child,
+			.dropdown-icon :first-child {
 				@apply stroke-grey90;
 			}
 			.mainText,
@@ -176,9 +175,9 @@
 				@apply text-grey90;
 			}
 			&:hover {
-				.left-icon,
-				.right-icon,
-				.dropdown-icon {
+				.left-icon :first-child,
+				.right-icon :first-child,
+				.dropdown-icon :first-child {
 					@apply stroke-grey90;
 				}
 				.mainText,
@@ -186,14 +185,12 @@
 					@apply text-grey90;
 				}
 			}
-			/* &:active {
-				@apply !bg-transparent
-			} */
+			/* See later: disabled:active */
 		}
 	}
 
 	div,
-	.group,
+	button.group,
 	svg {
 		@apply flex;
 	}

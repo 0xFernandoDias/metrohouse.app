@@ -8,8 +8,28 @@
 
 <!-- <div class="grid grid-cols-12"> -->
 <div class="flex flex-col">
-	<Button>click me<svelte:fragment slot="secondaryText">secondary text</svelte:fragment></Button>
-	<Button appearance="secondary" />
-	<Button appearance="textButton" />
-	<Button appearance="transparent" />
+	<Button leftIcon rightIcon dropdownButton
+		><svelte:fragment slot="secondaryText">secondary text</svelte:fragment></Button
+	>
+	<Button leftIcon rightIcon dropdownButton appearance="secondary"
+		><svelte:fragment slot="secondaryText">secondary text</svelte:fragment></Button
+	>
+	<Button leftIcon rightIcon dropdownButton appearance="textButton"
+		><svelte:fragment slot="secondaryText">secondary text</svelte:fragment></Button
+	>
+	<Button leftIcon rightIcon dropdownButton appearance="transparent"
+		><svelte:fragment slot="secondaryText">secondary text</svelte:fragment></Button
+	>
+	<Button leftIcon rightIcon dropdownButton disabled
+		><svelte:fragment slot="secondaryText">secondary text</svelte:fragment></Button
+	>
+	<Button leftIcon rightIcon dropdownButton disabled appearance="secondary"
+		><svelte:fragment slot="secondaryText">secondary text</svelte:fragment></Button
+	>
+	<Button leftIcon rightIcon dropdownButton disabled appearance="textButton"
+		><svelte:fragment slot="secondaryText">secondary text</svelte:fragment></Button
+	>
+	<Button leftIcon rightIcon dropdownButton disabled appearance="transparent"
+		><svelte:fragment slot="secondaryText">secondary text</svelte:fragment></Button
+	>
 </div>
