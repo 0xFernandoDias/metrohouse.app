@@ -1,9 +1,9 @@
 <script lang="ts">
 	export let appearance: 'primary' | 'secondary' | 'textButton' | 'transparent' = 'primary'
-	export let leftIcon: boolean = false
-	export let rightIcon: boolean = false
-	export let dropdownButton: boolean = false
-	export let disabled: boolean = false
+	export let leftIcon = false
+	export let rightIcon = false
+	export let dropdownButton = false
+	export let disabled = false
 	// export let href: string = ''
 	// export let data: any = null
 	// export let menuProps: any = null
@@ -186,6 +186,7 @@
 				}
 			}
 			/* See later: disabled:active */
+			/* See later: focus */
 		}
 	}
 

@@ -17,7 +17,7 @@
 		{disabled}
 		class="group flex min-h-5 w-5 rounded-sm border border-solid border-grey160 accent-themePrimary hover:accent-themeDarkAlt disabled:border-grey90 disabled:hover:accent-grey90"
 	/>
-	<span as="label" for={id} class="smRegular text-grey190" class:text-grey90={disabled}><slot></slot></span>
+	<span as="label" for={id} class="smRegular text-grey190 first-letter:uppercase" class:text-grey90={disabled}><slot>string</slot></span>
 </div>
 
 <style>

@@ -1,6 +1,7 @@
 <script>
 	import Button from '$lib/components/basicInputs/Button/Button.svelte'
 	import Checkbox from '$lib/components/basicInputs/Checkbox/Checkbox.svelte'
+	import ChoiceGroup from '$lib/components/basicInputs/ChoiceGroup/ChoiceGroup.svelte'
 </script>
 
 <svelte:head>
@@ -38,7 +39,14 @@
 </div> -->
 
 <div class="flex flex-col">
-	<Checkbox>Check me</Checkbox>
+	<ChoiceGroup
+		title="Label"
+		options={[
+			{ id: 'option1', label: 'option 1', disabled: false },
+			{ id: 'option2', label: 'option 2', disabled: false },
+			{ id: 'option3', label: 'option 3', disabled: false }
+		]}
+	/>
 </div>
 
 <style>
