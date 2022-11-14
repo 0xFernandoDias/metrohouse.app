@@ -86,7 +86,7 @@
 		.dropdown-icon {
 			@apply stroke-white;
 		}
-		div span {
+		.mainText, .secondaryText {
 			@apply text-white;
 		}
 	}
@@ -122,7 +122,7 @@
 			.dropdown-icon {
 				@apply stroke-themePrimary;
 			}
-			div span {
+			.mainText, .secondaryText {
 				@apply text-themePrimary;
 			}
 		}
@@ -130,7 +130,7 @@
 			.left-icon {
 				@apply stroke-themeDarker;
 			}
-			div span {
+			.mainText, .secondaryText {
 				@apply text-black;
 			}
 			.right-icon,
@@ -155,7 +155,7 @@
 			.dropdown-icon {
 				@apply stroke-grey90;
 			}
-			div span {
+			.mainText, .secondaryText {
 				@apply text-grey90;
 			}
 			&:hover {
@@ -164,7 +164,7 @@
 				.dropdown-icon {
 					@apply stroke-grey90;
 				}
-				div span {
+				.mainText, .secondaryText {
 					@apply text-grey90;
 				}
 			}
