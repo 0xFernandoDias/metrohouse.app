@@ -8,7 +8,7 @@
 
 <!-- <div class="grid grid-cols-12"> -->
 <div class="flex flex-col">
-	<Button />
+	<Button>click me<svelte:fragment slot="secondaryText">secondary text</svelte:fragment></Button>
 	<Button appearance="secondary" />
 	<Button appearance="textButton" />
 	<Button appearance="transparent" />

@@ -1,51 +1,64 @@
 <script lang="ts">
 	export let appearance: 'primary' | 'secondary' | 'textButton' | 'transparent' = 'primary'
+	export let leftIcon: boolean = false
+	export let rightIcon: boolean = false
+	export let dropdownButton: boolean = false
+	// export let href: string = ''
+	// export let data: any = null
+	// export let menuProps: any = null
+	// export let onClick: () => void = () => {}
 </script>
 
 <div class="min-w-max rounded-sm {appearance}">
 	<button type="button" class="group px-5 rounded-l-sm" disabled>
-		<svg viewBox="0 0 22 22">
-			<circle
-				class="left-icon"
-				cx="10"
-				cy="10"
-				r="10"
-				fill="none"
-				fill-rule="evenodd"
-				stroke-linecap="round"
-				stroke-linejoin="round"
-				stroke-width="2"
-				transform="translate(1 1)"
-			/>
-		</svg>
+		{#if leftIcon}
+			<svg viewBox="0 0 22 22">
+				<circle
+					class="left-icon"
+					cx="10"
+					cy="10"
+					r="10"
+					fill="none"
+					fill-rule="evenodd"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					stroke-width="2"
+					transform="translate(1 1)"
+				/>
+			</svg>
+		{/if}
 		<div class="flex-col items-start">
-			<span class="mainText">rest</span>
-			<span class="secondaryText">this is a secondary text</span>
+			<span class="mainText"><slot>click me</slot></span>
+			<span class="secondaryText"><slot name="secondaryText" /></span>
 		</div>
-		<svg viewBox="0 2 14 1">
-			<path
-				class="right-icon"
-				fill="none"
-				stroke-linecap="round"
-				stroke-linejoin="round"
-				stroke-width="2"
-				d="m1 1 6 6 6-6"
-			/>
-		</svg>
+		{#if rightIcon}
+			<svg viewBox="0 2 14 1">
+				<path
+					class="right-icon"
+					fill="none"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					stroke-width="2"
+					d="m1 1 6 6 6-6"
+				/>
+			</svg>
+		{/if}
 	</button>
-	<button type="button" class="group pr-2 rounded-r-sm" disabled>
-		<div class="h-4 w-[1px] bg-grey60" />
-		<svg viewBox="0 2 14 1">
-			<path
-				class="dropdown-icon"
-				fill="none"
-				stroke-linecap="round"
-				stroke-linejoin="round"
-				stroke-width="2"
-				d="m1 1 6 6 6-6"
-			/>
-		</svg>
-	</button>
+	{#if dropdownButton}
+		<button type="button" class="group pr-2 rounded-r-sm" disabled>
+			<div class="h-4 w-[1px] bg-grey60" />
+			<svg viewBox="0 2 14 1">
+				<path
+					class="dropdown-icon"
+					fill="none"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					stroke-width="2"
+					d="m1 1 6 6 6-6"
+				/>
+			</svg>
+		</button>
+	{/if}
 </div>
 
 <style>
@@ -86,7 +99,8 @@
 		.dropdown-icon {
 			@apply stroke-white;
 		}
-		.mainText, .secondaryText {
+		.mainText,
+		.secondaryText {
 			@apply text-white;
 		}
 	}
@@ -122,7 +136,8 @@
 			.dropdown-icon {
 				@apply stroke-themePrimary;
 			}
-			.mainText, .secondaryText {
+			.mainText,
+			.secondaryText {
 				@apply text-themePrimary;
 			}
 		}
@@ -130,7 +145,8 @@
 			.left-icon {
 				@apply stroke-themeDarker;
 			}
-			.mainText, .secondaryText {
+			.mainText,
+			.secondaryText {
 				@apply text-black;
 			}
 			.right-icon,
@@ -155,7 +171,8 @@
 			.dropdown-icon {
 				@apply stroke-grey90;
 			}
-			.mainText, .secondaryText {
+			.mainText,
+			.secondaryText {
 				@apply text-grey90;
 			}
 			&:hover {
@@ -164,7 +181,8 @@
 				.dropdown-icon {
 					@apply stroke-grey90;
 				}
-				.mainText, .secondaryText {
+				.mainText,
+				.secondaryText {
 					@apply text-grey90;
 				}
 			}
