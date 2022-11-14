@@ -38,7 +38,7 @@
 </div> -->
 
 <div class="flex flex-col">
-	<Checkbox />
+	<Checkbox>Check me</Checkbox>
 </div>
 
 <style>
