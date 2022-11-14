@@ -7,7 +7,15 @@ const config: UserConfig = {
 	plugins: [sveltekit()],
 	histoire: {
 		plugins: [HstSvelte()],
-		setupFile: 'histoire.setup.ts'
+		setupFile: 'histoire.setup.ts',
+		tree: {
+			groups: [
+			  {
+				id: 'top',
+				title: '',
+			  },
+			],
+		  },
 	},
 	test: {
 		globals: true,

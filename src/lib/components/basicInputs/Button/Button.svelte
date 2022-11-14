@@ -64,7 +64,7 @@
 	.secondary,
 	.textButton,
 	.transparent {
-		.group {
+		button.group {
 			.mainText {
 				@apply text-grey190;
 			}
@@ -78,20 +78,20 @@
 	}
 	.primary,
 	.secondary {
-		.group {
+		button.group {
 			@apply shadow-sm disabled:bg-grey20 disabled:hover:bg-grey20;
 		}
 	}
 	.secondary,
 	.textButton {
-		.group {
+		button.group {
 			@apply hover:bg-grey20 active:bg-grey30;
 			.dropdown-icon :first-child {
 				@apply group-hover:stroke-grey190;
 			}
 		}
 	}
-	.primary .group {
+	.primary button.group {
 		@apply bg-themePrimary hover:bg-themeDarkAlt active:bg-themeDark;
 		.left-icon :first-child,
 		.right-icon :first-child,
@@ -104,7 +104,7 @@
 		}
 	}
 
-	.secondary .group {
+	.secondary button.group {
 		@apply bg-white;
 		.left-icon :first-child,
 		.right-icon :first-child {
@@ -112,7 +112,7 @@
 		}
 	}
 
-	.textButton .group {
+	.textButton button.group {
 		@apply disabled:hover:bg-transparent;
 		.left-icon :first-child {
 			@apply stroke-themePrimary;
@@ -122,7 +122,7 @@
 		}
 	}
 
-	.transparent .group {
+	.transparent button.group {
 		.left-icon :first-child {
 			@apply stroke-themeDark;
 		}
