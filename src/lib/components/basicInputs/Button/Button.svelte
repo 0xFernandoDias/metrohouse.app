@@ -15,7 +15,7 @@
 <!-- Main and dropdown buttons container -->
 <div class="min-w-max rounded-sm btn-{appearance}">
 	<!-- Main button -->
-	<button type="button" class="group btn px-5 rounded-l-sm" {disabled}>
+	<button type="button" class="btn group rounded-l-sm px-5" {disabled}>
 		<!-- Do later: slot icons -->
 		{#if leftIcon}
 			<svg viewBox="0 0 22 22" class="left-icon">
@@ -49,8 +49,8 @@
 		{/if}
 	</button>
 	{#if dropdownButton}
-		<button type="button" class="group btn pr-2 rounded-r-sm" {disabled}>
-			<div class="h-4 w-[1px] bg-grey60" />
+		<button type="button" class="btn group rounded-r-sm pr-2" {disabled}>
+			<div class="bg-grey60 h-4 w-[1px]" />
 			<svg viewBox="0 2 14 1" class="dropdown-icon">
 				<path
 					fill="none"
@@ -86,7 +86,7 @@
 	.btn-primary,
 	.btn-secondary {
 		.btn {
-			@apply shadow-sm disabled:bg-grey20 disabled:hover:bg-grey20;
+			@apply disabled:bg-grey20 disabled:hover:bg-grey20 shadow-sm;
 		}
 	}
 
@@ -171,7 +171,7 @@
 
 	/* This class applies: some styles to the element and its texts, and icons colors and texts colors when it is disabled or disabled and hovered */
 	.btn {
-		@apply min-h-full py-1.5 gap-2 items-center;
+		@apply min-h-full items-center gap-2 py-1.5;
 		.mainText {
 			@apply text-smSemibold;
 		}

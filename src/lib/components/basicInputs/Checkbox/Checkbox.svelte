@@ -17,9 +17,11 @@
 		{value}
 		{disabled}
 		{checked}
-		class="flex min-h-5 w-5 rounded-sm border border-solid border-grey160 accent-themePrimary hover:accent-themeDarkAlt disabled:border-grey90 disabled:hover:accent-grey90"
+		class="min-h-5 border-grey160 accent-themePrimary hover:accent-themeDarkAlt disabled:border-grey90 disabled:hover:accent-grey90 flex w-5 rounded-sm border border-solid"
 	/>
-	<span as="label" for={name} class="text-smRegular text-grey190" class:text-grey90={disabled}>{label}</span>
+	<span as="label" for={name} class="text-smRegular text-grey190" class:text-grey90={disabled}
+		>{label}</span
+	>
 </label>
 
 <style>

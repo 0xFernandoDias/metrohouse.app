@@ -1,7 +1,7 @@
 /// <reference types="vitest" />
-import { sveltekit } from '@sveltejs/kit/vite';
+import { sveltekit } from '@sveltejs/kit/vite'
 import { HstSvelte } from '@histoire/plugin-svelte'
-import type { UserConfig } from 'vite';
+import type { UserConfig } from 'vite'
 
 const config: UserConfig = {
 	plugins: [sveltekit()],
@@ -10,17 +10,17 @@ const config: UserConfig = {
 		setupFile: 'histoire.setup.ts',
 		tree: {
 			groups: [
-			  {
-				id: 'top',
-				title: '',
-			  },
-			],
-		  },
+				{
+					id: 'top',
+					title: ''
+				}
+			]
+		}
 	},
 	test: {
 		globals: true,
-    	environment: 'jsdom'
-	},
-};
+		environment: 'jsdom'
+	}
+}
 
-export default config;
+export default config

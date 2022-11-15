@@ -23,7 +23,7 @@ export default defineConfig({
 					fontDisplay: 'swap'
 				}
 			})
-		}),
+		})
 	],
 	theme: {
 		screens: {
@@ -79,7 +79,7 @@ export default defineConfig({
 				grey160: '#323130',
 				grey190: '#201F1E',
 				black: '#000000'
-			},
+			}
 		}
 	},
 	shortcuts: {
@@ -104,6 +104,6 @@ export default defineConfig({
 		'text-4xlSemibold': 'font-segoeUiSemibold text-[2.625] leading-[3.25rem]',
 		'text-5xlSemibold': 'font-segoeUiSemibold text-[4.25rem] leading-[4.75rem]',
 		hstack: 'flex items-center',
-		vstack: 'flex flex-col',
+		vstack: 'flex flex-col'
 	}
 })

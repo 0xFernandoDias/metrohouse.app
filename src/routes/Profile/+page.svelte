@@ -2,7 +2,7 @@
 </script>
 
 <svelte:head>
-  <title>Profile</title>
+	<title>Profile</title>
 </svelte:head>
 
 <style>

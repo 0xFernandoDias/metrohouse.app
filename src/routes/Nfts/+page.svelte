@@ -2,7 +2,7 @@
 </script>
 
 <svelte:head>
-  <title>NFTS</title>
+	<title>NFTS</title>
 </svelte:head>
 
 <style>

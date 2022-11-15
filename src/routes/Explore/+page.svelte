@@ -2,7 +2,7 @@
 </script>
 
 <svelte:head>
-  <title>Explore</title>
+	<title>Explore</title>
 </svelte:head>
 
 <style>

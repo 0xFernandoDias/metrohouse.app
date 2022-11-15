@@ -15,7 +15,7 @@
 		{id}
 		{value}
 		{disabled}
-		class="flex min-h-5 w-5 accent-themePrimary hover:accent-themeDarkAlt"
+		class="min-h-5 accent-themePrimary hover:accent-themeDarkAlt flex w-5"
 	/>
 	<span as="label" for={name} class="text-smRegular text-grey190" class:text-grey90={disabled}
 		>{label}</span

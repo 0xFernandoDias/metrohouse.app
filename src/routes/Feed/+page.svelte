@@ -2,7 +2,7 @@
 </script>
 
 <svelte:head>
-  <title>Feed</title>
+	<title>Feed</title>
 </svelte:head>
 
 <style>

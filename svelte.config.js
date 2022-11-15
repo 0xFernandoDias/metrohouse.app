@@ -1,6 +1,6 @@
-import adapter from '@sveltejs/adapter-auto';
-import preprocess from 'svelte-preprocess';
-import { windi } from "svelte-windicss-preprocess"
+import adapter from '@sveltejs/adapter-auto'
+import preprocess from 'svelte-preprocess'
+import { windi } from 'svelte-windicss-preprocess'
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -8,10 +8,7 @@ const config = {
 	// for more information about preprocessors
 
 	//https://kit.svelte.dev/docs/configuration
-	preprocess: [
-		preprocess(),
-		windi({})
-	],
+	preprocess: [preprocess(), windi({})],
 	kit: {
 		adapter: adapter()
 	},
@@ -19,8 +16,8 @@ const config = {
 	env: {
 		dir: process.cwd(),
 		publicPrefix: 'PUBLIC_'
-	  },
-	  files: {
+	},
+	files: {
 		assets: 'static',
 		tests: 'tests',
 		lib: 'src/lib',
@@ -29,8 +26,8 @@ const config = {
 		serviceWorker: 'src/service-worker',
 		appTemplate: 'src/app.html',
 		errorTemplate: 'src/error.html'
-	  },
-	extensions: ['.svelte'],
-};
+	},
+	extensions: ['.svelte']
+}
 
-export default config;
+export default config

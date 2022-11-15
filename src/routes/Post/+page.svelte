@@ -2,7 +2,7 @@
 </script>
 
 <svelte:head>
-  <title>Post</title>
+	<title>Post</title>
 </svelte:head>
 
 <style>

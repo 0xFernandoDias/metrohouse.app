@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Choice from "../../Choice/Choice.svelte"
+	import Choice from '../../Choice/Choice.svelte'
 	export let title = 'Title'
 	export let options: {
 		id?: string
@@ -8,7 +8,16 @@
 		label: string
 		disabled?: boolean
 		key: number
-	}[] = [{ id: 'choiceGroup', name: 'choiceGroup', value: 'string', label: 'string', disabled: false, key: 1 }]
+	}[] = [
+		{
+			id: 'choiceGroup',
+			name: 'choiceGroup',
+			value: 'string',
+			label: 'string',
+			disabled: false,
+			key: 1
+		}
+	]
 </script>
 
 <!-- Title and options container -->
@@ -18,7 +27,7 @@
 	<!-- Options list container -->
 	<div class="flex-col gap-2">
 		{#each options as option (option.key)}
-		{@const { id, name, value, label, disabled } = option}
+			{@const { id, name, value, label, disabled } = option}
 			<!-- Radio button -->
 			<Choice {id} {name} {value} {label} {disabled} />
 		{/each}
