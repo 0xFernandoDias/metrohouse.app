@@ -18,7 +18,7 @@
 	<button type="button" class="btn group rounded-l-sm px-5" {disabled}>
 		<!-- Do later: slot icons -->
 		{#if leftIcon}
-			<svg viewBox="0 0 22 22" class="left-icon">
+			<svg viewBox="0 0 22 22" class="btn-left-icon">
 				<circle
 					cx="10"
 					cy="10"
@@ -33,11 +33,11 @@
 			</svg>
 		{/if}
 		<div class="flex-col items-start">
-			<span class="mainText"><slot>click me</slot></span>
-			<span class="secondaryText"><slot name="secondaryText" /></span>
+			<span class="btn-mainText"><slot>click me</slot></span>
+			<span class="btn-secondaryText"><slot name="secondaryText" /></span>
 		</div>
 		{#if rightIcon}
-			<svg viewBox="0 2 14 1" class="right-icon">
+			<svg viewBox="0 2 14 1" class="btn-right-icon">
 				<path
 					fill="none"
 					stroke-linecap="round"
@@ -51,7 +51,7 @@
 	{#if dropdownButton}
 		<button type="button" class="btn group rounded-r-sm pr-2" {disabled}>
 			<div class="bg-grey60 h-4 w-[1px]" />
-			<svg viewBox="0 2 14 1" class="dropdown-icon">
+			<svg viewBox="0 2 14 1" class="btn-dropdown-icon">
 				<path
 					fill="none"
 					stroke-linecap="round"
@@ -70,13 +70,13 @@
 	.btn-textButton,
 	.btn-transparent {
 		.btn {
-			.mainText {
+			.btn-mainText {
 				@apply text-grey190;
 			}
-			.secondaryText {
+			.btn-secondaryText {
 				@apply text-grey130;
 			}
-			.dropdown-icon :first-child {
+			.btn-dropdown-icon :first-child {
 				@apply stroke-grey130;
 			}
 		}
@@ -95,7 +95,7 @@
 	.btn-textButton {
 		.btn {
 			@apply hover:bg-grey20 active:bg-grey30;
-			.dropdown-icon:first-child {
+			.btn-dropdown-icon:first-child {
 				@apply group-hover:stroke-grey190;
 			}
 		}
@@ -104,13 +104,13 @@
 	/* This class applies: background, texts, and icons colors to the element */
 	.btn-primary .btn {
 		@apply bg-themePrimary hover:bg-themeDarkAlt active:bg-themeDark;
-		.left-icon :first-child,
-		.right-icon :first-child,
-		.dropdown-icon :first-child {
+		.btn-left-icon :first-child,
+		.btn-right-icon :first-child,
+		.btn-dropdown-icon :first-child {
 			@apply stroke-white;
 		}
-		.mainText,
-		.secondaryText {
+		.btn-mainText,
+		.btn-secondaryText {
 			@apply text-white;
 		}
 	}
@@ -118,8 +118,8 @@
 	/* This class applies: background and icons color to the element */
 	.btn-secondary .btn {
 		@apply bg-white;
-		.left-icon :first-child,
-		.right-icon :first-child {
+		.btn-left-icon :first-child,
+		.btn-right-icon :first-child {
 			@apply stroke-grey190;
 		}
 	}
@@ -127,43 +127,43 @@
 	/* This class applies: icons colors to the element and background color when the it is disabled and hovered */
 	.btn-textButton .btn {
 		@apply disabled:hover:bg-transparent;
-		.left-icon :first-child {
+		.btn-left-icon :first-child {
 			@apply stroke-themePrimary;
 		}
-		.right-icon :first-child {
+		.btn-right-icon :first-child {
 			@apply stroke-grey190;
 		}
 	}
 
 	/* This class applies: icons colors to the element and icons colors and texts color when it is hovered or active */
 	.btn-transparent .btn {
-		.left-icon :first-child {
+		.btn-left-icon :first-child {
 			@apply stroke-themeDark;
 		}
-		.right-icon :first-child {
+		.btn-right-icon :first-child {
 			@apply stroke-grey190;
 		}
 		&:hover {
-			.left-icon :first-child,
-			.right-icon :first-child,
-			.dropdown-icon :first-child {
+			.btn-left-icon :first-child,
+			.btn-right-icon :first-child,
+			.btn-dropdown-icon :first-child {
 				@apply stroke-themePrimary;
 			}
-			.mainText,
-			.secondaryText {
+			.btn-mainText,
+			.btn-secondaryText {
 				@apply text-themePrimary;
 			}
 		}
 		&:active {
-			.left-icon :first-child {
+			.btn-left-icon :first-child {
 				@apply stroke-themeDarker;
 			}
-			.mainText,
-			.secondaryText {
+			.btn-mainText,
+			.btn-secondaryText {
 				@apply text-black;
 			}
-			.right-icon :first-child,
-			.dropdown-icon :first-child {
+			.btn-right-icon :first-child,
+			.btn-dropdown-icon :first-child {
 				@apply stroke-black;
 			}
 		}
@@ -175,18 +175,18 @@
 		.mainText {
 			@apply text-smSemibold;
 		}
-		.secondaryText {
+		.btn-secondaryText {
 			@apply text-xsRegular;
 		}
 		&:disabled {
 			@apply cursor-not-allowed;
-			.left-icon :first-child,
-			.right-icon :first-child,
-			.dropdown-icon :first-child {
+			.btn-left-icon :first-child,
+			.btn-right-icon :first-child,
+			.btn-dropdown-icon :first-child {
 				@apply stroke-grey90;
 			}
-			.mainText,
-			.secondaryText {
+			.btn-mainText,
+			.btn-secondaryText {
 				@apply text-grey90;
 			}
 			&:hover {
@@ -195,8 +195,8 @@
 				.dropdown-icon :first-child {
 					@apply stroke-grey90;
 				}
-				.mainText,
-				.secondaryText {
+				.btn-mainText,
+				.btn-secondaryText {
 					@apply text-grey90;
 				}
 			}
