@@ -10,7 +10,9 @@
 	// export let onClick: () => void = () => {}
 </script>
 
+<!-- Main and dropdown buttons container -->
 <div class="min-w-max rounded-sm {appearance}">
+	<!-- Main button -->
 	<button type="button" class="group px-5 rounded-l-sm" {disabled}>
 		<!-- Do later: slot icons -->
 		{#if leftIcon}
@@ -61,7 +63,7 @@
 </div>
 
 <style>
-	/* This class applies the same text and dropdown icon colors to the buttons */
+	/* This class applies: colors to the texts and to the dropdown icon */
 	.secondary,
 	.textButton,
 	.transparent {
@@ -78,7 +80,7 @@
 		}
 	}
 
-	/* This class applies shadow to the button, and when it is disabled and/or disabled and hovered, the class also applies a change to its background color */
+	/* This class applies: shadow to the element and background color when the element is disabled or disabled and hovered */
 	.primary,
 	.secondary {
 		button.group {
@@ -86,7 +88,7 @@
 		}
 	}
 
-	/* This class applies a change to the button background and dropdown icon color when it is being hovered, and also applies a change to its background color when it is active */
+	/* This class applies: background and dropdown icon colors to the element when it is hovered and background color when it is active */
 	.secondary,
 	.textButton {
 		button.group {
@@ -96,6 +98,8 @@
 			}
 		}
 	}
+
+	/* This class applies: background and icons colors to the element */
 	.primary button.group {
 		@apply bg-themePrimary hover:bg-themeDarkAlt active:bg-themeDark;
 		.left-icon :first-child,
@@ -109,6 +113,7 @@
 		}
 	}
 
+	/* This class applies: background and icons color to the element */
 	.secondary button.group {
 		@apply bg-white;
 		.left-icon :first-child,
@@ -117,6 +122,7 @@
 		}
 	}
 
+	/* This class applies: icons colors to the element and background color when the it is disabled and hovered */
 	.textButton button.group {
 		@apply disabled:hover:bg-transparent;
 		.left-icon :first-child {
@@ -127,6 +133,7 @@
 		}
 	}
 
+	/* This class applies: icons colors to the element and icons colors and texts color when it is hovered or active */
 	.transparent button.group {
 		.left-icon :first-child {
 			@apply stroke-themeDark;
@@ -160,6 +167,7 @@
 		}
 	}
 
+	/* This class applies: some styles to the element and its texts, and icons colors and texts colors when it is disabled or disabled and hovered */
 	button.group {
 		@apply min-h-full py-1.5 gap-2 items-center;
 		.mainText {
