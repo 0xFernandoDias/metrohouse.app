@@ -12,7 +12,7 @@
 <!-- <div class="grid grid-cols-12"> -->
 
 <!-- Button -->
-<!-- <div class="flex flex-col">
+<div class="flex flex-col">
 	<Button leftIcon rightIcon dropdownButton
 		><svelte:fragment slot="secondaryText">secondary text</svelte:fragment></Button
 	>
@@ -37,7 +37,7 @@
 	<Button leftIcon rightIcon dropdownButton disabled appearance="transparent"
 		><svelte:fragment slot="secondaryText">secondary text</svelte:fragment></Button
 	>
-</div> -->
+</div>
 
 <!-- Choice Group -->
 <!-- <div class="flex flex-col">
@@ -52,9 +52,9 @@
 </div> -->
 
 <!-- Choice Group With Image -->
-<div class="flex flex-col">
+<!-- <div class="flex flex-col">
 	<ChoiceGroupImage />
-</div>
+</div> -->
 
 <style>
 </style>
