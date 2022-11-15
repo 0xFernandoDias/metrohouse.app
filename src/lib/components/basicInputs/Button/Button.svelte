@@ -61,7 +61,7 @@
 </div>
 
 <style>
-	/* This class applies the same text colors to the buttons */
+	/* This class applies the same text and dropdown icon colors to the buttons */
 	.secondary,
 	.textButton,
 	.transparent {
@@ -78,7 +78,7 @@
 		}
 	}
 
-	/* This class applies shadow to the button, and also applies a change to its background color when you float it or when it is disabled */
+	/* This class applies shadow to the button, and when it is disabled and/or disabled and hovered, the class also applies a change to its background color */
 	.primary,
 	.secondary {
 		button.group {
@@ -86,7 +86,7 @@
 		}
 	}
 
-	/* When you hover the button, the color of its background and the dropdown icon change, and when you activate it, the color of its background also changes */
+	/* This class applies a change to the button background and dropdown icon color when it is being hovered, and also applies a change to its background color when it is active */
 	.secondary,
 	.textButton {
 		button.group {
