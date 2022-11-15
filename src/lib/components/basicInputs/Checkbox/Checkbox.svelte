@@ -6,6 +6,7 @@
 	export let disabled = false
 </script>
 
+<!-- Checkbox and label container -->
 <div class="flex gap-2">
 	<input
 		as="div"

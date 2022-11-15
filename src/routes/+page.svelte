@@ -1,46 +1,14 @@
-<script>
-	import Button from '$lib/components/basicInputs/Button/Button.svelte'
-	import Checkbox from '$lib/components/basicInputs/Checkbox/Checkbox.svelte'
-	import ChoiceGroup from '$lib/components/basicInputs/ChoiceGroup/ChoiceGroup.svelte'
-	import ChoiceGroupImage from '$lib/components/basicInputs/ChoiceGroupImage/ChoiceGroupImage.svelte';
+<script lang="ts">
+	import Choice from '$lib/components/basicInputs/Choice/Choice.svelte'
+	import ChoiceGroup from '$lib/components/basicInputs/groups/ChoiceGroup/ChoiceGroup.svelte'
 </script>
 
 <svelte:head>
 	<title>Feed</title>
 </svelte:head>
 
-<!-- <div class="grid grid-cols-12"> -->
-
-<!-- Button -->
 <div class="flex flex-col">
-	<Button leftIcon rightIcon dropdownButton
-		><svelte:fragment slot="secondaryText">secondary text</svelte:fragment></Button
-	>
-	<Button leftIcon rightIcon dropdownButton appearance="secondary"
-		><svelte:fragment slot="secondaryText">secondary text</svelte:fragment></Button
-	>
-	<Button leftIcon rightIcon dropdownButton appearance="textButton"
-		><svelte:fragment slot="secondaryText">secondary text</svelte:fragment></Button
-	>
-	<Button leftIcon rightIcon dropdownButton appearance="transparent"
-		><svelte:fragment slot="secondaryText">secondary text</svelte:fragment></Button
-	>
-	<Button leftIcon rightIcon dropdownButton disabled
-		><svelte:fragment slot="secondaryText">secondary text</svelte:fragment></Button
-	>
-	<Button leftIcon rightIcon dropdownButton disabled appearance="secondary"
-		><svelte:fragment slot="secondaryText">secondary text</svelte:fragment></Button
-	>
-	<Button leftIcon rightIcon dropdownButton disabled appearance="textButton"
-		><svelte:fragment slot="secondaryText">secondary text</svelte:fragment></Button
-	>
-	<Button leftIcon rightIcon dropdownButton disabled appearance="transparent"
-		><svelte:fragment slot="secondaryText">secondary text</svelte:fragment></Button
-	>
-</div>
-
-<!-- Choice Group -->
-<!-- <div class="flex flex-col">
+	<!-- Choice Group -->
 	<ChoiceGroup
 		title="Label"
 		options={[
@@ -49,12 +17,7 @@
 			{ id: 'option3', label: 'option 3', disabled: false }
 		]}
 	/>
-</div> -->
-
-<!-- Choice Group With Image -->
-<!-- <div class="flex flex-col">
-	<ChoiceGroupImage />
-</div> -->
+</div>
 
 <style>
 </style>
