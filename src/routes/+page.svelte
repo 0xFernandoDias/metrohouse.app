@@ -2,6 +2,7 @@
 	import Button from '$lib/components/basicInputs/Button/Button.svelte'
 	import Checkbox from '$lib/components/basicInputs/Checkbox/Checkbox.svelte'
 	import ChoiceGroup from '$lib/components/basicInputs/ChoiceGroup/ChoiceGroup.svelte'
+	import ChoiceGroupImage from '$lib/components/basicInputs/ChoiceGroupImage/ChoiceGroupImage.svelte';
 </script>
 
 <svelte:head>
@@ -38,7 +39,8 @@
 	>
 </div> -->
 
-<div class="flex flex-col">
+<!-- Choice Group -->
+<!-- <div class="flex flex-col">
 	<ChoiceGroup
 		title="Label"
 		options={[
@@ -47,6 +49,11 @@
 			{ id: 'option3', label: 'option 3', disabled: false }
 		]}
 	/>
+</div> -->
+
+<!-- Choice Group With Image -->
+<div class="flex flex-col">
+	<ChoiceGroupImage />
 </div>
 
 <style>

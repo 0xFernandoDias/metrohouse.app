@@ -12,7 +12,7 @@
 
 <div class="min-w-max rounded-sm {appearance}">
 	<button type="button" class="group px-5 rounded-l-sm" {disabled}>
-		<!-- See later: slot icons -->
+		<!-- Do later: slot icons -->
 		{#if leftIcon}
 			<svg viewBox="0 0 22 22" class="left-icon">
 				<circle
@@ -185,8 +185,8 @@
 					@apply text-grey90;
 				}
 			}
-			/* See later: disabled:active */
-			/* See later: focus */
+			/* Do later: disabled:active */
+			/* Do later: focus */
 		}
 	}
 
