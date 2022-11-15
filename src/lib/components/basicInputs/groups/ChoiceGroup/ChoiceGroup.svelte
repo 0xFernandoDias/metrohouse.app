@@ -14,7 +14,7 @@
 <!-- Title and options container -->
 <!-- Do later: transform this into slots, CheckboxGroup -->
 <div class="flex-col gap-3.5">
-	<span class="smSemibold text-grey190">{title}</span>
+	<span class="text-smSemibold text-grey190">{title}</span>
 	<!-- Options list container -->
 	<div class="flex-col gap-2">
 		{#each options as option (option.key)}

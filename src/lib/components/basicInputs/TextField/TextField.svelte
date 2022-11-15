@@ -4,10 +4,11 @@
     export let appearance: 'normal' | 'underlined' = 'normal'
     export let required = true
     export let disabled = false
-    export let label = 'Label'
-    export let placeholder = "Search"
-    export let id: string = 'searchbox'
-    export let name: string = 'searchbox'
+    export let value = ''
+    export let label = 'label'
+    export let placeholder = 'Type here'
+    export let name = 'textField'
+    export let id = 'textField'
     // export let defaultValue = ''
     // export let options = []
     // export let readOnly = false
@@ -18,7 +19,7 @@
     <label for={name} class="">{label}</label>
     <div>
         <svg></svg>
-        <input {type} {id} {placeholder} class="" {disabled} {required}>
+        <input {type} {name} {value} {id} {placeholder} class="" {disabled} {required}>
         <!-- <button type="submit" class="">Search</button> -->
     </div>
 </form>

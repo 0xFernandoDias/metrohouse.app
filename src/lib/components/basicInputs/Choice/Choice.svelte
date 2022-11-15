@@ -17,7 +17,7 @@
 		{disabled}
 		class="flex min-h-5 w-5 accent-themePrimary hover:accent-themeDarkAlt"
 	/>
-	<span as="label" for={name} class="smRegular text-grey190" class:text-grey90={disabled}
+	<span as="label" for={name} class="text-smRegular text-grey190" class:text-grey90={disabled}
 		>{label}</span
 	>
 </label>

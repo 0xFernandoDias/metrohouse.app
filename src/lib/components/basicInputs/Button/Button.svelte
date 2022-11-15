@@ -13,9 +13,9 @@
 </script>
 
 <!-- Main and dropdown buttons container -->
-<div class="min-w-max rounded-sm {appearance}">
+<div class="min-w-max rounded-sm btn-{appearance}">
 	<!-- Main button -->
-	<button type="button" class="group px-5 rounded-l-sm" {disabled}>
+	<button type="button" class="group btn px-5 rounded-l-sm" {disabled}>
 		<!-- Do later: slot icons -->
 		{#if leftIcon}
 			<svg viewBox="0 0 22 22" class="left-icon">
@@ -33,8 +33,8 @@
 			</svg>
 		{/if}
 		<div class="flex-col items-start">
-			<span class="mainText"><slot>click me</slot></span>
-			<span class="secondaryText"><slot name="secondaryText" /></span>
+			<span class="text-mainText"><slot>click me</slot></span>
+			<span class="text-secondaryText"><slot name="secondaryText" /></span>
 		</div>
 		{#if rightIcon}
 			<svg viewBox="0 2 14 1" class="right-icon">
@@ -49,7 +49,7 @@
 		{/if}
 	</button>
 	{#if dropdownButton}
-		<button type="button" class="group pr-2 rounded-r-sm" {disabled}>
+		<button type="button" class="group btn pr-2 rounded-r-sm" {disabled}>
 			<div class="h-4 w-[1px] bg-grey60" />
 			<svg viewBox="0 2 14 1" class="dropdown-icon">
 				<path
@@ -66,14 +66,14 @@
 
 <style>
 	/* This class applies: colors to the texts and the dropdown icon */
-	.secondary,
-	.textButton,
-	.transparent {
-		button.group {
-			.mainText {
+	.btn-secondary,
+	.btn-textButton,
+	.btn-transparent {
+		.btn {
+			.text-mainText {
 				@apply text-grey190;
 			}
-			.secondaryText {
+			.text-secondaryText {
 				@apply text-grey130;
 			}
 			.dropdown-icon :first-child {
@@ -83,40 +83,40 @@
 	}
 
 	/* This class applies: shadow to the element and background color when the element is disabled or disabled and hovered */
-	.primary,
-	.secondary {
-		button.group {
+	.btn-primary,
+	.btn-secondary {
+		.btn {
 			@apply shadow-sm disabled:bg-grey20 disabled:hover:bg-grey20;
 		}
 	}
 
 	/* This class applies: background and dropdown icon colors to the element when it is hovered and background color when it is active */
-	.secondary,
-	.textButton {
-		button.group {
+	.btn-secondary,
+	.btn-textButton {
+		.btn {
 			@apply hover:bg-grey20 active:bg-grey30;
-			.dropdown-icon :first-child {
+			.dropdown-icon:first-child {
 				@apply group-hover:stroke-grey190;
 			}
 		}
 	}
 
 	/* This class applies: background, texts, and icons colors to the element */
-	.primary button.group {
+	.btn-primary .btn {
 		@apply bg-themePrimary hover:bg-themeDarkAlt active:bg-themeDark;
 		.left-icon :first-child,
 		.right-icon :first-child,
 		.dropdown-icon :first-child {
 			@apply stroke-white;
 		}
-		.mainText,
-		.secondaryText {
+		.text-mainText,
+		.text-secondaryText {
 			@apply text-white;
 		}
 	}
 
 	/* This class applies: background and icons color to the element */
-	.secondary button.group {
+	.btn-secondary .btn {
 		@apply bg-white;
 		.left-icon :first-child,
 		.right-icon :first-child {
@@ -125,7 +125,7 @@
 	}
 
 	/* This class applies: icons colors to the element and background color when the it is disabled and hovered */
-	.textButton button.group {
+	.btn-textButton .btn {
 		@apply disabled:hover:bg-transparent;
 		.left-icon :first-child {
 			@apply stroke-themePrimary;
@@ -136,7 +136,7 @@
 	}
 
 	/* This class applies: icons colors to the element and icons colors and texts color when it is hovered or active */
-	.transparent button.group {
+	.btn-transparent .btn {
 		.left-icon :first-child {
 			@apply stroke-themeDark;
 		}
@@ -149,8 +149,8 @@
 			.dropdown-icon :first-child {
 				@apply stroke-themePrimary;
 			}
-			.mainText,
-			.secondaryText {
+			.text-mainText,
+			.text-secondaryText {
 				@apply text-themePrimary;
 			}
 		}
@@ -158,8 +158,8 @@
 			.left-icon :first-child {
 				@apply stroke-themeDarker;
 			}
-			.mainText,
-			.secondaryText {
+			.text-mainText,
+			.text-secondaryText {
 				@apply text-black;
 			}
 			.right-icon :first-child,
@@ -170,12 +170,12 @@
 	}
 
 	/* This class applies: some styles to the element and its texts, and icons colors and texts colors when it is disabled or disabled and hovered */
-	button.group {
+	.btn {
 		@apply min-h-full py-1.5 gap-2 items-center;
-		.mainText {
+		.text-mainText {
 			@apply smSemibold;
 		}
-		.secondaryText {
+		.text-secondaryText {
 			@apply xsRegular;
 		}
 		&:disabled {
@@ -185,8 +185,8 @@
 			.dropdown-icon :first-child {
 				@apply stroke-grey90;
 			}
-			.mainText,
-			.secondaryText {
+			.text-mainText,
+			.text-secondaryText {
 				@apply text-grey90;
 			}
 			&:hover {
@@ -195,8 +195,8 @@
 				.dropdown-icon :first-child {
 					@apply stroke-grey90;
 				}
-				.mainText,
-				.secondaryText {
+				.text-mainText,
+				.text-secondaryText {
 					@apply text-grey90;
 				}
 			}
@@ -206,7 +206,7 @@
 	}
 
 	div,
-	button.group,
+	.btn,
 	svg {
 		@apply flex;
 	}

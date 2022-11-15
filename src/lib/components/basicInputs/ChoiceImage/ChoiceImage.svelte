@@ -1,17 +1,18 @@
 <script lang="ts">
-	export let id: string = 'choiceGroupImage'
-	export let name: string = 'choiceGroupImage'
-	export let value: string = ''
+	export let name = 'choiceGroupImage'
+	export let id = 'choiceGroupImage'
+	export let value = 'image'
 	export let disabled = false
 </script>
 
+<!-- Image as a radio button -->
 <div class="relative max-w-min">
 	<div class="flex flex-row-reverse">
 		<input
 			as="div"
 			type="radio"
-			{id}
 			bind:group={name}
+			{id}
 			{value}
 			{disabled}
 			class="absolute min-h-5 w-5 m-1 accent-grey130 hover:accent-grey160"
