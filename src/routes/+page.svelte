@@ -1,6 +1,5 @@
 <script lang="ts">
-	import Choice from '$lib/components/basicInputs/Choice/Choice.svelte'
-	import ChoiceGroup from '$lib/components/basicInputs/groups/ChoiceGroup/ChoiceGroup.svelte'
+	import Button from "$lib/components/basicInputs/Button/Button.svelte"
 </script>
 
 <svelte:head>
@@ -8,15 +7,7 @@
 </svelte:head>
 
 <div class="flex flex-col">
-	<!-- Choice Group -->
-	<ChoiceGroup
-		title="Label"
-		options={[
-			{ id: 'option1', label: 'option 1', disabled: false },
-			{ id: 'option2', label: 'option 2', disabled: false },
-			{ id: 'option3', label: 'option 3', disabled: false }
-		]}
-	/>
+	<Button />
 </div>
 
 <style>

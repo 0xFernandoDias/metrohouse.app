@@ -19,7 +19,7 @@
         disabled={option.disabled}
         class="flex min-h-5 w-5 accent-themePrimary hover:accent-themeDarkAlt"
     />
-    <span as="label" for={name} class="smRegular text-grey190 first-letter:uppercase" class:text-grey90={option.disabled}
+    <span as="label" for={name} class="smRegular text-grey190" class:text-grey90={option.disabled}
         >{option.label}</span
     >
 </div>

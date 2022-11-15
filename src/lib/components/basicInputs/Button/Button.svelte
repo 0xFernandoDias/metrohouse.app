@@ -8,6 +8,8 @@
 	// export let data: any = null
 	// export let menuProps: any = null
 	// export let onClick: () => void = () => {}
+
+	// Do later: link
 </script>
 
 <!-- Main and dropdown buttons container -->
@@ -211,9 +213,5 @@
 
 	svg {
 		@apply min-h-5 w-4;
-	}
-
-	span {
-		@apply first-letter:uppercase;
 	}
 </style>
