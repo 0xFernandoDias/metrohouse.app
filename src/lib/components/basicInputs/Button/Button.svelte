@@ -65,7 +65,7 @@
 </div>
 
 <style>
-	/* This class applies: colors to the texts and to the dropdown icon */
+	/* This class applies: colors to the texts and the dropdown icon */
 	.secondary,
 	.textButton,
 	.transparent {
@@ -101,7 +101,7 @@
 		}
 	}
 
-	/* This class applies: background and icons colors to the element */
+	/* This class applies: background, texts, and icons colors to the element */
 	.primary button.group {
 		@apply bg-themePrimary hover:bg-themeDarkAlt active:bg-themeDark;
 		.left-icon :first-child,

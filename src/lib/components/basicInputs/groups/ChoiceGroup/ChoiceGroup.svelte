@@ -1,23 +1,26 @@
 <script lang="ts">
 	import Choice from "../../Choice/Choice.svelte"
 	export let title = 'Title'
-	export let name = 'choiceGroup'
 	export let options: {
 		id?: string
-		value?: string
+		name: string
+		value: string
 		label: string
 		disabled?: boolean
-	}[] = [{ id: 'choiceGroup', label: 'string', disabled: false }]
+		key: number
+	}[] = [{ id: 'choiceGroup', name: 'choiceGroup', value: 'string', label: 'string', disabled: false, key: 1 }]
 </script>
 
 <!-- Title and options container -->
+<!-- Do later: transform this into slots, CheckboxGroup -->
 <div class="flex-col gap-3.5">
 	<span class="smSemibold text-grey190">{title}</span>
 	<!-- Options list container -->
 	<div class="flex-col gap-2">
-		{#each options as option}
+		{#each options as option (option.key)}
+		{@const { id, name, value, label, disabled } = option}
 			<!-- Radio button -->
-			<Choice {name} {option} />
+			<Choice {id} {name} {value} {label} {disabled} />
 		{/each}
 	</div>
 </div>

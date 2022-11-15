@@ -2,7 +2,6 @@
 	export let id: string = 'choiceGroupImage'
 	export let name: string = 'choiceGroupImage'
 	export let value: string = ''
-	export let checked = false
 	export let disabled = false
 </script>
 
@@ -12,9 +11,8 @@
 			as="div"
 			type="radio"
 			{id}
-			{name}
+			bind:group={name}
 			{value}
-			{checked}
 			{disabled}
 			class="absolute min-h-5 w-5 m-1 accent-grey130 hover:accent-grey160"
 		/>
