@@ -33,8 +33,8 @@
 			</svg>
 		{/if}
 		<div class="flex-col items-start">
-			<span class="text-mainText"><slot>click me</slot></span>
-			<span class="text-secondaryText"><slot name="secondaryText" /></span>
+			<span class="mainText"><slot>click me</slot></span>
+			<span class="secondaryText"><slot name="secondaryText" /></span>
 		</div>
 		{#if rightIcon}
 			<svg viewBox="0 2 14 1" class="right-icon">
@@ -70,10 +70,10 @@
 	.btn-textButton,
 	.btn-transparent {
 		.btn {
-			.text-mainText {
+			.mainText {
 				@apply text-grey190;
 			}
-			.text-secondaryText {
+			.secondaryText {
 				@apply text-grey130;
 			}
 			.dropdown-icon :first-child {
@@ -109,8 +109,8 @@
 		.dropdown-icon :first-child {
 			@apply stroke-white;
 		}
-		.text-mainText,
-		.text-secondaryText {
+		.mainText,
+		.secondaryText {
 			@apply text-white;
 		}
 	}
@@ -149,8 +149,8 @@
 			.dropdown-icon :first-child {
 				@apply stroke-themePrimary;
 			}
-			.text-mainText,
-			.text-secondaryText {
+			.mainText,
+			.secondaryText {
 				@apply text-themePrimary;
 			}
 		}
@@ -158,8 +158,8 @@
 			.left-icon :first-child {
 				@apply stroke-themeDarker;
 			}
-			.text-mainText,
-			.text-secondaryText {
+			.mainText,
+			.secondaryText {
 				@apply text-black;
 			}
 			.right-icon :first-child,
@@ -172,11 +172,11 @@
 	/* This class applies: some styles to the element and its texts, and icons colors and texts colors when it is disabled or disabled and hovered */
 	.btn {
 		@apply min-h-full py-1.5 gap-2 items-center;
-		.text-mainText {
-			@apply smSemibold;
+		.mainText {
+			@apply text-smSemibold;
 		}
-		.text-secondaryText {
-			@apply xsRegular;
+		.secondaryText {
+			@apply text-xsRegular;
 		}
 		&:disabled {
 			@apply cursor-not-allowed;
@@ -185,8 +185,8 @@
 			.dropdown-icon :first-child {
 				@apply stroke-grey90;
 			}
-			.text-mainText,
-			.text-secondaryText {
+			.mainText,
+			.secondaryText {
 				@apply text-grey90;
 			}
 			&:hover {
@@ -195,8 +195,8 @@
 				.dropdown-icon :first-child {
 					@apply stroke-grey90;
 				}
-				.text-mainText,
-				.text-secondaryText {
+				.mainText,
+				.secondaryText {
 					@apply text-grey90;
 				}
 			}
