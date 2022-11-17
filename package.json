@@ -111,8 +111,7 @@
 				}
 			}
 		],
-		"semi": false,
-		"windicssConfig": "./windi.config.ts"
+		"semi": false
 	},
 	"prettierIgnore": [
 		".DS_Store",

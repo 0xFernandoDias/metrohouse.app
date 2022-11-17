@@ -106,4 +106,5 @@ export default defineConfig({
 		hstack: 'flex items-center',
 		vstack: 'flex flex-col'
 	}
+	// Do later: All classes got a prefix of "font-" so we can use them in the "shortcuts" section
 })

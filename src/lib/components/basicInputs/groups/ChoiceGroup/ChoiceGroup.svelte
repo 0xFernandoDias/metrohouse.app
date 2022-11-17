@@ -7,7 +7,7 @@
 		value: string
 		label: string
 		disabled?: boolean
-		key: number
+		key: string
 	}[] = [
 		{
 			id: 'choiceGroup',
@@ -15,7 +15,7 @@
 			value: 'string',
 			label: 'string',
 			disabled: false,
-			key: 1
+			key: '1'
 		}
 	]
 </script>
