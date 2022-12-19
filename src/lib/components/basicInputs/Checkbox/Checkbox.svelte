@@ -1,4 +1,6 @@
 <script lang="ts">
+	// Do later: ARIA
+
 	export let name = 'checkbox'
 	export let id = 'checkbox'
 	export let value = 'string'

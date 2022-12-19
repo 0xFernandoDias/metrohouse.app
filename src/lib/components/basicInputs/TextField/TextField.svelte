@@ -1,4 +1,6 @@
 <script lang="ts">
+	// Do later: ARIA
+
 	export let componentType: 'text' | 'search' | 'dropdown' | 'spin' | 'multiline' = 'text'
 	export let type: 'text' | 'search' | 'password' = 'text'
 	export let appearance: 'normal' | 'underlined' = 'normal'

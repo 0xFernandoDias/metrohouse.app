@@ -1,4 +1,6 @@
 <script lang="ts">
+	// Do later: ARIA
+
 	import Choice from '../../Choice/Choice.svelte'
 	export let title = 'Title'
 	export let options: {

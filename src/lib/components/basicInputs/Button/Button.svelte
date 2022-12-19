@@ -1,4 +1,6 @@
 <script lang="ts">
+	// Do later: ARIA
+
 	export let appearance: 'primary' | 'secondary' | 'textButton' | 'transparent' = 'primary'
 	export let leftIcon = false
 	export let rightIcon = false
@@ -69,7 +71,7 @@
 	.btn-secondary,
 	.btn-textButton,
 	.btn-transparent {
-		.btn {
+		button {
 			.btn-mainText {
 				@apply text-grey190;
 			}
@@ -85,7 +87,7 @@
 	/* This class applies: shadow to the element and background color when the element is disabled or disabled and hovered */
 	.btn-primary,
 	.btn-secondary {
-		.btn {
+		button {
 			@apply disabled:bg-grey20 disabled:hover:bg-grey20 shadow-sm;
 		}
 	}
@@ -93,7 +95,7 @@
 	/* This class applies: background and dropdown icon colors to the element when it is hovered and background color when it is active */
 	.btn-secondary,
 	.btn-textButton {
-		.btn {
+		button {
 			@apply hover:bg-grey20 active:bg-grey30;
 			.btn-dropdown-icon:first-child {
 				@apply group-hover:stroke-grey190;
@@ -102,7 +104,7 @@
 	}
 
 	/* This class applies: background, texts, and icons colors to the element */
-	.btn-primary .btn {
+	.btn-primary button {
 		@apply bg-themePrimary hover:bg-themeDarkAlt active:bg-themeDark;
 		.btn-left-icon :first-child,
 		.btn-right-icon :first-child,
@@ -116,7 +118,7 @@
 	}
 
 	/* This class applies: background and icons color to the element */
-	.btn-secondary .btn {
+	.btn-secondary button {
 		@apply bg-white;
 		.btn-left-icon :first-child,
 		.btn-right-icon :first-child {
@@ -125,7 +127,7 @@
 	}
 
 	/* This class applies: icons colors to the element and background color when the it is disabled and hovered */
-	.btn-textButton .btn {
+	.btn-textButton button {
 		@apply disabled:hover:bg-transparent;
 		.btn-left-icon :first-child {
 			@apply stroke-themePrimary;
@@ -136,7 +138,7 @@
 	}
 
 	/* This class applies: icons colors to the element and icons colors and texts color when it is hovered or active */
-	.btn-transparent .btn {
+	.btn-transparent button {
 		.btn-left-icon :first-child {
 			@apply stroke-themeDark;
 		}
@@ -170,9 +172,9 @@
 	}
 
 	/* This class applies: some styles to the element and its texts, and icons colors and texts colors when it is disabled or disabled and hovered */
-	.btn {
+	button {
 		@apply min-h-full items-center gap-2 py-1.5;
-		.mainText {
+		.btn-mainText {
 			@apply text-smSemibold;
 		}
 		.btn-secondaryText {
@@ -206,7 +208,7 @@
 	}
 
 	div,
-	.btn,
+	button,
 	svg {
 		@apply flex;
 	}

@@ -1,4 +1,6 @@
 <script lang="ts">
+	// Do later: ARIA
+
 	export let name = ''
 	export let id = 'choiceGroup'
 	export let value = 'string'
