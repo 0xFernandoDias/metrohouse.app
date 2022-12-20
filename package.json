@@ -19,7 +19,7 @@
 		"analysis": "windicss-analysis"
 	},
 	"devDependencies": {
-		"@histoire/plugin-svelte": "^0.11.9",
+		"@histoire/plugin-svelte": "^0.11.6",
 		"@sveltejs/adapter-auto": "next",
 		"@sveltejs/kit": "1.0.1",
 		"@testing-library/svelte": "^3.2.2",
