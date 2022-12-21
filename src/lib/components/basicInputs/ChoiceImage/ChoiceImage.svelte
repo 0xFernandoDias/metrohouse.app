@@ -1,6 +1,4 @@
 <script lang="ts">
-	// Do later: ARIA
-
 	export let name = 'choiceGroupImage'
 	export let id = 'choiceGroupImage'
 	export let value = 'image'

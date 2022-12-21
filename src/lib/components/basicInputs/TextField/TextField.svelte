@@ -1,6 +1,4 @@
 <script lang="ts">
-	// Do later: ARIA
-
 	export let componentType: 'text' | 'search' | 'dropdown' | 'spin' | 'multiline' = 'text'
 	export let type: 'text' | 'search' | 'password' = 'text'
 	export let appearance: 'normal' | 'underlined' = 'normal'
@@ -26,11 +24,5 @@
 	</div>
 </form>
 
-<!-- Do later: Needs to be styled -->
-<!-- Do later: on error -->
-<!-- Do later: on focus -->
-<!-- Do later: Prefix -->
-
-<!-- Do later: Mask -->
 <style>
 </style>

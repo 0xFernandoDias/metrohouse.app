@@ -1,6 +1,4 @@
 <script lang="ts">
-	// Do later: ARIA
-
 	export let appearance: 'primary' | 'secondary' | 'textButton' | 'transparent' = 'primary'
 	export let leftIcon = false
 	export let rightIcon = false
@@ -10,15 +8,12 @@
 	// export let data: any = null
 	// export let menuProps: any = null
 	// export let onClick: () => void = () => {}
-
-	// Do later: link
 </script>
 
 <!-- Main and dropdown buttons container -->
 <div class="min-w-max rounded-sm btn-{appearance}">
 	<!-- Main button -->
 	<button type="button" class="btn group rounded-l-sm px-5" {disabled}>
-		<!-- Do later: slot icons -->
 		{#if leftIcon}
 			<svg viewBox="0 0 22 22" class="btn-left-icon">
 				<circle
@@ -202,8 +197,6 @@
 					@apply text-grey90;
 				}
 			}
-			/* Do later: disabled:active */
-			/* Do later: focus */
 		}
 	}
 

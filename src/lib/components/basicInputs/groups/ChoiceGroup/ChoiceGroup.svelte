@@ -1,6 +1,4 @@
 <script lang="ts">
-	// Do later: ARIA
-
 	import Choice from '../../Choice/Choice.svelte'
 	export let title = 'Title'
 	export let options: {
@@ -23,7 +21,6 @@
 </script>
 
 <!-- Title and options container -->
-<!-- Do later: transform this into slots, CheckboxGroup -->
 <div class="flex-col gap-3.5">
 	<span class="text-smSemibold text-grey190">{title}</span>
 	<!-- Options list container -->

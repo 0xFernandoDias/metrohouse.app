@@ -1,12 +1,4 @@
 <script lang="ts">
-	// based on suggestions from:
-	// Inclusive Components by Heydon Pickering https://inclusive-components.design/toggle-button/
-	// On Designing and Building Toggle Switches by Sara Soueidan https://www.sarasoueidan.com/blog/toggle-switch-design/
-	// and this example by Scott O'hara https://codepen.io/scottohara/pen/zLZwNv
-
-	// Do later: types
-	// DO LATER ARIA, i18n uniqueID, :root, see more examples on Svelte, Flowbite, Microsoft, etc.
-
 	export let label: any
 	export let value = 'on'
 
@@ -30,7 +22,6 @@
 </div>
 
 <style>
-	/* Do later: To include two slashes after the first class letter. */
 	:root {
 		--accent-color: CornflowerBlue;
 		--gray: #ccc;

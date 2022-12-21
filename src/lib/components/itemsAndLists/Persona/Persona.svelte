@@ -19,8 +19,6 @@
 	</div>
 </div>
 
-<!-- Do later: compare Flowbite elements and build mine -->
-
 <!-- only image -->
 <img
 	class="h-10 w-10 rounded-full"

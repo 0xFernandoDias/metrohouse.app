@@ -1,6 +1,4 @@
 <script lang="ts">
-	// Do later: ARIA
-
 	import Persona from '../Persona/Persona.svelte'
 
 	export let personas = [{ name: '', key: '1' }]
