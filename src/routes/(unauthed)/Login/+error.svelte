@@ -1,8 +1,9 @@
 <script lang="ts">
+	export let data: any = ''
 </script>
 
 <svelte:head>
-	<title>Login</title>
+	<title>Error Login</title>
 </svelte:head>
 
 <style>

@@ -1,8 +1,9 @@
 <script lang="ts">
+	export let data: any = ''
 </script>
 
 <svelte:head>
-	<title>NFTS</title>
+	<title>Error NFTS</title>
 </svelte:head>
 
 <style>

@@ -1,5 +1,10 @@
 <script lang="ts">
-	import '../app.css'
+	//Do NOW: AUTH
+
+	// async function logOut() {
+	// 	await Moralis.User.logOut()
+	// 	console.log('logged out')
+	// }
 </script>
 
 <slot />

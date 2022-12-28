@@ -33,6 +33,7 @@
 		"eslint-plugin-svelte3": "^4.0.0",
 		"histoire": "^0.12.2",
 		"jsdom": "^20.0.2",
+		"moralis": "^2.10.3",
 		"prettier": "^2.8.1",
 		"prettier-plugin-tailwindcss": "^0.1.13",
 		"svelte": "^3.44.0",

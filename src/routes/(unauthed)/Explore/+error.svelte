@@ -1,8 +1,9 @@
 <script lang="ts">
+	export let data: any = ''
 </script>
 
 <svelte:head>
-	<title>Profile</title>
+	<title>Error Explore</title>
 </svelte:head>
 
 <style>

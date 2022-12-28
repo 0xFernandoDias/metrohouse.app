@@ -1,9 +1,9 @@
 /// <reference types="vitest" />
 import { sveltekit } from '@sveltejs/kit/vite'
 import { HstSvelte } from '@histoire/plugin-svelte'
-import type { UserConfig } from 'vite'
 
-const config: UserConfig = {
+/** @type {import('vite').UserConfig} */
+const config = {
 	plugins: [sveltekit()],
 	histoire: {
 		plugins: [HstSvelte()],

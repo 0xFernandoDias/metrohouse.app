@@ -1,14 +1,16 @@
 <script lang="ts">
-	import Button from '$lib/components/basicInputs/Button/Button.svelte'
+	export let data: any = ''
+
+	// import Button from '$lib/components/basicInputs/Button/Button.svelte'
 	import Switch from '$lib/components/basicInputs/Switch/Switch.svelte'
 
-	let switchValue
+	// let switchValue
+	// let multiValue
 	let sliderValue: any
-	let multiValue
 </script>
 
 <svelte:head>
-	<title>Feed</title>
+	<title>Main page</title>
 </svelte:head>
 
 <div class="flex flex-col">
