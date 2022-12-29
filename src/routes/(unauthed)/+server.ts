@@ -1,7 +1,6 @@
-import type { PageServerLoad, Actions } from './$types'
+import Moralis from 'moralis'
 
-export const load = (() => {
-	return 'prop'
-}) satisfies PageServerLoad
-
-export const actions = {} satisfies Actions
+await Moralis.start({
+	apiKey: import.meta.env.MORALIS_API_KEY
+	// ...and any other configuration
+}).then(() => console.log('Moralis started!'))

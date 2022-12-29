@@ -33,7 +33,6 @@
 		"eslint-plugin-svelte3": "^4.0.0",
 		"histoire": "^0.12.2",
 		"jsdom": "^20.0.2",
-		"moralis": "^2.10.3",
 		"prettier": "^2.8.1",
 		"prettier-plugin-svelte": "^2.8.1",
 		"prettier-plugin-tailwindcss": "^0.1.13",
@@ -133,5 +132,8 @@
 	"cypress-cucumber-preprocessor": {
 		"nonGlobalStepDefinitions": true
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"moralis": "^2.10.3"
+	}
 }

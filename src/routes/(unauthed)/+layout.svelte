@@ -1,16 +1,8 @@
 <script lang="ts">
-	//Do NOW: AUTH
-
-	// async function logOut() {
-	// 	await Moralis.User.logOut()
-	// 	console.log('logged out')
-	// }
 </script>
 
 <div class="app">
-	<main>
-		<slot />
-	</main>
+	<slot />
 </div>
 
 <style global windi:global windi:preflights:global windi:safelist:global>
