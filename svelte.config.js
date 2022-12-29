@@ -1,6 +1,5 @@
 import adapter from '@sveltejs/adapter-auto'
 import { vitePreprocess } from '@sveltejs/kit/vite'
-import preprocess from 'svelte-preprocess'
 import { windi } from 'svelte-windicss-preprocess'
 
 /** @type {import('@sveltejs/kit').Config} */
@@ -9,7 +8,7 @@ const config = {
 	// for more information about preprocessors
 
 	//https://kit.svelte.dev/docs/configuration
-	preprocess: [vitePreprocess(), preprocess({}), windi({})],
+	preprocess: [vitePreprocess(), windi({})],
 	kit: {
 		adapter: adapter()
 	},

@@ -1,4 +1,3 @@
-/// <reference types="vitest" />
 import { sveltekit } from '@sveltejs/kit/vite'
 import { HstSvelte } from '@histoire/plugin-svelte'
 

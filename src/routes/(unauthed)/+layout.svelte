@@ -7,7 +7,11 @@
 	// }
 </script>
 
-<slot />
+<div class="app">
+	<main>
+		<slot />
+	</main>
+</div>
 
 <style global windi:global windi:preflights:global windi:safelist:global>
 	span {

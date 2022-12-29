@@ -1,14 +1,12 @@
 <script lang="ts">
-	export let data: any = ''
+	import type { PageData } from './$types'
 
-	// /** @type {import('./$types').PageLoad} */
-	// export function load() {
-	// 	// ...
-	// }
+	export let data: PageData
 </script>
 
 <svelte:head>
 	<title>Login</title>
+	<meta name="description" content="Svelte demo app" />
 </svelte:head>
 
 <style>
