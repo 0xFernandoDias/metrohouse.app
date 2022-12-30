@@ -1,110 +1,98 @@
-<script context="module" lang="ts">
-	import { createClient, setContextClient, gql } from '@urql/svelte'
+<script lang="ts">
+	import { gql, queryStore, getContextClient } from '@urql/svelte'
 
-	export const client = createClient({
-		url: 'https://api.lens.dev'
-	})
-
-	/** @type {import('./$types').PageLoad} */
-	export const load = async () => {
-		const ProfileQuery = gql`
-			query Profile {
-				profile(request: { profileId: "0x01" }) {
-					id
-					name
-					bio
-					attributes {
-						displayType
-						traitType
-						key
-						value
+	const ProfileQuery = gql`
+		query Profile {
+			profile(request: { profileId: "0x01" }) {
+				id
+				name
+				bio
+				attributes {
+					displayType
+					traitType
+					key
+					value
+				}
+				followNftAddress
+				metadata
+				isDefault
+				picture {
+					... on NftImage {
+						contractAddress
+						tokenId
+						uri
+						verified
 					}
-					followNftAddress
-					metadata
-					isDefault
-					picture {
-						... on NftImage {
-							contractAddress
-							tokenId
-							uri
-							verified
+					... on MediaSet {
+						original {
+							url
+							mimeType
 						}
-						... on MediaSet {
-							original {
-								url
-								mimeType
+					}
+					__typename
+				}
+				handle
+				coverPicture {
+					... on NftImage {
+						contractAddress
+						tokenId
+						uri
+						verified
+					}
+					... on MediaSet {
+						original {
+							url
+							mimeType
+						}
+					}
+					__typename
+				}
+				ownedBy
+				dispatcher {
+					address
+					canUseRelay
+				}
+				stats {
+					totalFollowers
+					totalFollowing
+					totalPosts
+					totalComments
+					totalMirrors
+					totalPublications
+					totalCollects
+				}
+				followModule {
+					... on FeeFollowModuleSettings {
+						type
+						amount {
+							asset {
+								symbol
+								name
+								decimals
+								address
 							}
+							value
 						}
-						__typename
+						recipient
 					}
-					handle
-					coverPicture {
-						... on NftImage {
-							contractAddress
-							tokenId
-							uri
-							verified
-						}
-						... on MediaSet {
-							original {
-								url
-								mimeType
-							}
-						}
-						__typename
+					... on ProfileFollowModuleSettings {
+						type
 					}
-					ownedBy
-					dispatcher {
-						address
-						canUseRelay
-					}
-					stats {
-						totalFollowers
-						totalFollowing
-						totalPosts
-						totalComments
-						totalMirrors
-						totalPublications
-						totalCollects
-					}
-					followModule {
-						... on FeeFollowModuleSettings {
-							type
-							amount {
-								asset {
-									symbol
-									name
-									decimals
-									address
-								}
-								value
-							}
-							recipient
-						}
-						... on ProfileFollowModuleSettings {
-							type
-						}
-						... on RevertFollowModuleSettings {
-							type
-						}
+					... on RevertFollowModuleSettings {
+						type
 					}
 				}
 			}
-		`
+		}
+	`
 
-		let anyVariablee
+	export let request = ''
 
-		const res = await client.query(ProfileQuery, anyVariablee).toPromise()
-
-		return { profile: res?.data.profile }
-	}
-</script>
-
-<script lang="ts">
-	setContextClient(client)
-
-	export let data: any
-	$: profile = data.profile
+	$: res = queryStore({
+		client: getContextClient(),
+		query: ProfileQuery,
+		variables: { request }
+	})
 </script>
 
 <svelte:head>
@@ -113,10 +101,12 @@
 </svelte:head>
 
 <section>
-	{#if !profile}
+	{#if $res.fetching}
 		<p>...waiting</p>
+	{:else if $res.error}
+		<p>Oh no... {$res.error.message}</p>
 	{:else}
-		<p>The profile is {$profile}</p>
+		<p>The response is {$res.data.ProfileQuery}</p>
 	{/if}
 	<!-- <Switch label="Enable dark mode" bind:value={sliderValue} /> -->
 </section>

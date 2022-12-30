@@ -1,4 +1,11 @@
-<script lang="ts">
+<script context="module" lang="ts">
+	import { createClient, setContextClient } from '@urql/svelte'
+
+	export const client = createClient({
+		url: 'https://api.lens.dev'
+	})
+
+	setContextClient(client)
 </script>
 
 <slot />
