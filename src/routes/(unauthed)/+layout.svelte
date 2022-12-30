@@ -1,9 +1,7 @@
 <script lang="ts">
 </script>
 
-<div class="app">
-	<slot />
-</div>
+<slot />
 
 <style global windi:global windi:preflights:global windi:safelist:global>
 	span {

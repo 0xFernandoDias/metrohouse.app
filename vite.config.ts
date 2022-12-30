@@ -19,6 +19,9 @@ const config = {
 	test: {
 		globals: true,
 		environment: 'jsdom'
+	},
+	optimizeDeps: {
+		exclude: ['@urql/svelte']
 	}
 }
 
