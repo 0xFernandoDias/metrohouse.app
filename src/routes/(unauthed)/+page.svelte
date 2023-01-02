@@ -3,7 +3,7 @@
 
 	const ProfileQuery = gql`
 		query Profile {
-			profile(request: { profileId: "0x01" }) {
+			profile(request: { profileId: "0x09" }) {
 				id
 				name
 				bio
@@ -36,6 +36,7 @@
 		...error
 	{:else}
 		{$returnedProfile.data.profile.name}
+		{$returnedProfile.data.profile.bio}
 	{/if}
 </section>
 

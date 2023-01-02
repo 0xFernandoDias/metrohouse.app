@@ -1,9 +1,7 @@
 <script lang="ts">
-	import { createClient, setContextClient } from '@urql/svelte'
+	import { client } from '$lib/lensCall'
+	import { setContextClient } from '@urql/svelte'
 
-	export const client = createClient({
-		url: 'https://api.lens.dev'
-	})
 	setContextClient(client)
 </script>
 
