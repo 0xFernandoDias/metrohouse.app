@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { gql, queryStore, getContextClient } from '@urql/svelte'
-	import { onMount } from 'svelte'
 
 	const ProfileQuery = gql`
 		query Profile {
@@ -18,8 +17,6 @@
 			}
 		}
 	`
-
-	let profile: any
 
 	const returnedProfile = queryStore({
 		client: getContextClient(),
