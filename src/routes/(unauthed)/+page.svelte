@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { gql, queryStore, getContextClient } from '@urql/svelte'
+	import { onMount } from 'svelte'
 
 	const ProfileQuery = gql`
 		query Profile {
@@ -7,91 +8,22 @@
 				id
 				name
 				bio
-				attributes {
-					displayType
-					traitType
-					key
-					value
-				}
-				followNftAddress
-				metadata
-				isDefault
 				picture {
-					... on NftImage {
-						contractAddress
-						tokenId
-						uri
-						verified
-					}
 					... on MediaSet {
 						original {
 							url
-							mimeType
 						}
-					}
-					__typename
-				}
-				handle
-				coverPicture {
-					... on NftImage {
-						contractAddress
-						tokenId
-						uri
-						verified
-					}
-					... on MediaSet {
-						original {
-							url
-							mimeType
-						}
-					}
-					__typename
-				}
-				ownedBy
-				dispatcher {
-					address
-					canUseRelay
-				}
-				stats {
-					totalFollowers
-					totalFollowing
-					totalPosts
-					totalComments
-					totalMirrors
-					totalPublications
-					totalCollects
-				}
-				followModule {
-					... on FeeFollowModuleSettings {
-						type
-						amount {
-							asset {
-								symbol
-								name
-								decimals
-								address
-							}
-							value
-						}
-						recipient
-					}
-					... on ProfileFollowModuleSettings {
-						type
-					}
-					... on RevertFollowModuleSettings {
-						type
 					}
 				}
 			}
 		}
 	`
 
-	export let request = ''
+	let profile: any
 
-	$: res = queryStore({
+	const returnedProfile = queryStore({
 		client: getContextClient(),
-		query: ProfileQuery,
-		variables: { request }
+		query: ProfileQuery
 	})
 </script>
 
@@ -101,14 +33,13 @@
 </svelte:head>
 
 <section>
-	{#if $res.fetching}
-		<p>...waiting</p>
-	{:else if $res.error}
-		<p>Oh no... {$res.error.message}</p>
+	{#if $returnedProfile.fetching}
+		...loading
+	{:else if $returnedProfile.error}
+		...error
 	{:else}
-		<p>The response is {$res.data.ProfileQuery}</p>
+		{$returnedProfile.data.profile.name}
 	{/if}
-	<!-- <Switch label="Enable dark mode" bind:value={sliderValue} /> -->
 </section>
 
 <style>
