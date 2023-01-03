@@ -1,9 +1,12 @@
+<script context="module">
+</script>
+
 <script lang="ts">
 	import { gql, queryStore, getContextClient } from '@urql/svelte'
 
 	const ProfileQuery = gql`
 		query Profile {
-			profile(request: { profileId: "0x09" }) {
+			profile(request: { profileId: "0x35" }) {
 				id
 				name
 				bio
@@ -14,6 +17,7 @@
 						}
 					}
 				}
+				ownedBy
 			}
 		}
 	`
@@ -37,6 +41,7 @@
 	{:else}
 		{$returnedProfile.data.profile.name}
 		{$returnedProfile.data.profile.bio}
+		{$returnedProfile.data.profile.ownedBy}
 	{/if}
 </section>
 
