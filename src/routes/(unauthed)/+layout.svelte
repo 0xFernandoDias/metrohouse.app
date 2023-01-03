@@ -1,17 +1,12 @@
 <script lang="ts">
 	import { client } from '$lib/lensCall'
 	import { setContextClient } from '@urql/svelte'
-	import { onMount } from 'svelte'
 
 	export let data: any
 
-	onMount(() => {
-		console.log('data', data)
-	})
-
 	setContextClient(client)
 
-	$: console.log('data', data)
+	$: console.log('data ++layout reactive', data)
 </script>
 
 <slot />

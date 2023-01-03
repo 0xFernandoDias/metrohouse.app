@@ -1,13 +1,7 @@
 <script lang="ts">
-	import { onMount } from 'svelte'
-
 	export let data: any
 
-	onMount(() => {
-		console.log('data', data)
-	})
-
-	$: console.log('data', data)
+	$: console.log('data ++page reactive', data)
 </script>
 
 <svelte:head>
