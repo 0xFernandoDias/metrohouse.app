@@ -32,7 +32,7 @@
 		"eslint": "^8.30.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-svelte3": "^4.0.0",
-		"graphql": "^16.6.0",
+		"graphql": "^15.8.0",
 		"histoire": "^0.12.2",
 		"jsdom": "^20.0.2",
 		"moralis": "^2.11.0",
@@ -135,5 +135,9 @@
 	"cypress-cucumber-preprocessor": {
 		"nonGlobalStepDefinitions": true
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"@kitql/all-in": "^0.8.3",
+		"houdini": "^0.19.4"
+	}
 }
