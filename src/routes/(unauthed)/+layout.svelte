@@ -1,12 +1,8 @@
 <script lang="ts">
-	import { client as clientLens } from '$lib/lensCall'
+	import { client } from '$lib/lensCall'
 	import { setContextClient } from '@urql/svelte'
 
-	export let data: any
-
-	setContextClient(clientLens)
-
-	$: console.log('data ++layout reactive: ', data)
+	setContextClient(client)
 </script>
 
 <slot />
