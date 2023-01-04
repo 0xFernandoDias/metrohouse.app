@@ -9,5 +9,7 @@
 	<meta name="description" content="Svelte demo app" />
 </svelte:head>
 
+<div>Hi</div>
+
 <style>
 </style>
