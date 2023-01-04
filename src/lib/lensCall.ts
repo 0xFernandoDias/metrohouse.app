@@ -1,5 +1,5 @@
-import { createClient } from '@urql/svelte'
+// import { createClient } from '@urql/svelte'
 
-export const client = createClient({
-	url: 'https://api.lens.dev'
-})
+// export const client = createClient({
+// 	url: 'https://api.lens.dev'
+// })

@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { client } from '$lib/lensCall'
-	import { setContextClient } from '@urql/svelte'
+	// import { client } from '$lib/lensCall'
+	// import { setContextClient } from '@urql/svelte'
 
-	setContextClient(client)
+	// setContextClient(client)
 </script>
 
 <slot />

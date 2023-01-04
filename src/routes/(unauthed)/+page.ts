@@ -1,4 +1,4 @@
-import { getContextClient, gql, queryStore } from '@urql/svelte'
+// import { getContextClient, gql, queryStore } from '@urql/svelte'
 import Moralis from 'moralis'
 
 export async function load() {
