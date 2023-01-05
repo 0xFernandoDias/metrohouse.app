@@ -2,6 +2,10 @@
 	import { getContextClient, gql, queryStore } from '@urql/svelte'
 	import { goto } from '$app/navigation'
 
+	const handleClick = () => {
+		goto(`profile/${ownedBy}`)
+	}
+
 	const profileQuery = gql`
 		query Profile {
 			profile(request: { profileId: "0x01" }) {
@@ -87,18 +91,19 @@
 		}
 	`
 
-	const returnedProfile: any = queryStore({
-		client: getContextClient(),
-		query: profileQuery
-	})
+	let ownedBy = ''
 
-	// try catch
+	try {
+		const returnedProfile = queryStore({
+			client: getContextClient(),
+			query: profileQuery
+		})
 
-	const ownedBy = '0xC13Da0f3701CbfbbA6744E513ea9d3eaBdC1c588'
-
-	function handleClick() {
-		const link = `profile/${ownedBy}`
-		goto(link)
+		returnedProfile.subscribe((result) => {
+			ownedBy = result?.data?.profile.ownedBy
+		})
+	} catch (error) {
+		console.log(error)
 	}
 </script>
 
