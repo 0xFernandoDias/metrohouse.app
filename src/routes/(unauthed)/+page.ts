@@ -1,6 +1,7 @@
 import Moralis from 'moralis'
 import { error } from '@sveltejs/kit'
-import type { PageServerLoad } from './$types'
+import type { PageLoad } from './$types'
+
 export const load = (async () => {
 	try {
 		const nfts = await Moralis.EvmApi.nft
@@ -16,4 +17,4 @@ export const load = (async () => {
 	} catch (err) {
 		throw error(404, 'Not found')
 	}
-}) satisfies PageServerLoad
+}) satisfies PageLoad
