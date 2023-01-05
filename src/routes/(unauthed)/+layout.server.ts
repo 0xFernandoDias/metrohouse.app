@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import Moralis from 'moralis'
 import { env as private_env } from '$env/dynamic/private'
 

@@ -1,7 +1,7 @@
 <script lang="ts">
-	export let data: any
+	import type { PageData } from './$types'
 
-	$: console.log('the props', data.nfts)
+	export let data: PageData
 </script>
 
 <svelte:head>
@@ -9,8 +9,11 @@
 	<meta name="description" content="Svelte demo app" />
 </svelte:head>
 
-<div />
-<section />
+<div>
+	{#each data.nfts as nft}
+		{nft.name}
+	{/each}
+</div>
 
 <style>
 </style>
