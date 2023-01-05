@@ -32,7 +32,6 @@
 		"eslint": "^8.30.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-svelte3": "^4.0.0",
-		"graphql": "^15.8.0",
 		"histoire": "^0.12.2",
 		"jsdom": "^20.0.2",
 		"prettier": "^2.8.1",
