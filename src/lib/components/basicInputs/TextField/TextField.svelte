@@ -15,14 +15,14 @@
 	// export let ...position: 'left' | 'right' = 'left'
 </script>
 
-<form>
+<div>
 	<label for={name} class="">{label}</label>
 	<div>
 		<svg />
 		<input {type} {name} {value} {id} {placeholder} class="" {disabled} {required} />
 		<!-- <button type="submit" class="">Search</button> -->
 	</div>
-</form>
+</div>
 
 <style>
 </style>
